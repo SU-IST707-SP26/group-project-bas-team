@@ -1,6 +1,5 @@
 
-### Title
-
+### Title: Predicting Future Amazon Purchases Using Demographics and Purchase Histories
 
 ### Team
 1. Name: Alexa Lotano - POC <br>
@@ -58,7 +57,7 @@ The dataset we will be using contains 5 years worth of crowdsource Amazon purcha
 
 #### Methods
 
-As we continue to work through this course, we may find these approaches to not be optimal and as such are subject to change when better solutions or methodolgy is found.
+As we continue to work through this course, we may find these approaches to not be optimal and as such are subject to change when better solutions or methodology is found.
 
 **Preprocessing and Transformations**
 
@@ -72,14 +71,14 @@ Our preprocessing will involve several cleaning transformations to prepare the d
 
 4. **Sequence Construction**: For each user, we will construct ordered sequences of product categories purchased over time. These sequences will serve as input for our temporal models, with the target being the next category in the sequence.
 
-5. **Handling Missing Data**: We will assess the extent of missing values in both purchase and survey data and apply imputation strategies or remove the data based on it's nature.
+5. **Handling Missing Data**: We will assess the extent of missing values in both purchase and survey data and apply imputation strategies or remove the data based on its nature.
 
-6. **Train/Test Split with Temporal Ordering**: To simulate real-world conditions, we will use earlier purchases for training and later purchases for testing, preserving the temporal structure of the data. Instead of the traditional 80/20 split.
+6. **Train/Test Split with Temporal Ordering**: To simulate real-world conditions, we will use earlier purchases for training and later purchases for testing, preserving the temporal structure of the data, instead of the traditional 80/20 split.
 
 
 **Modeling Techniques**
 
-We will are hoping to use a multi-pronged modeling approach to capture different aspects of purchasing behavior. The best modeling technique will be used at the end. As the course progresses, we may learn more optimal modeling techniques that will be added or exchanged with the ones listed below:
+We are hoping to use a multi-pronged modeling approach to capture different aspects of purchasing behavior. The best modeling technique will be used at the end. As the course progresses, we may learn more optimal modeling techniques that will be added or exchanged with the ones listed below:
 
 1. **Association Rule Mining (Apriori/FP-Growth)**: To identify frequently co-purchased product categories and establish baseline association patterns that indicate what products tend to follow others.
 
@@ -89,7 +88,7 @@ We will are hoping to use a multi-pronged modeling approach to capture different
 
 4. **LSTM Networks**: Long Short-Term Memory networks will be explored to model the sequential nature of purchase histories and capture long-term dependencies in buying patterns.
 
-5. **Wide & Deep Neural Networks**: We will implement a Wide & Deep neural network architecture, which was originally developed for recommendation systems. Using the "wide" and "deep" paths to memorizes direct associations between demographic features and purchase patterns while the "deep" path learns abstract, non-obvious relationships through multiple hidden layers. (Chapter 10 introduces this approach)[^4]
+5. **Wide & Deep Neural Networks**: We will implement a Wide & Deep neural network architecture, which was originally developed for recommendation systems, using the "wide" and "deep" paths to memorize direct associations between demographic features and purchase patterns while the "deep" path learns abstract, non-obvious relationships through multiple hidden layers. (Chapter 10 introduces this approach)[^4]
 
 6. **Clustering for Customer Segmentation**: K-Means or hierarchical clustering will be applied to demographic and behavioral features to identify distinct customer segments, allowing for segment-specific prediction models.
 
