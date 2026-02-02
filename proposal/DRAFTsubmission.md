@@ -3,7 +3,7 @@
 
 
 ### Team
-Alexa Lotano - POC
+Alexa Lotano - POC  
     Github ID: alexa-lotano
 
 
@@ -20,9 +20,9 @@ We believe that the novel part of our approach is our focus on future customer b
 We believe the people who would care the most are Amazon's stakeholders. If we are successful, it could improve the business model of Amazon and strengthen their algorithms to the point where they do not just recommend products based on what one is currently buying (i.e. offering similar products), but take the bigger picture into account and recommend products based on what they might look for next (i.e. if someone buys a phone, maybe recommend them a phone case, or a charger, or maybe even earbuds). Incorporating demographic data into our system with further strengtehn Amazon's business model by enhancing recommendations and increasing engagement with recommendations. This adjustment to Amazon's business model can change the way online shopping is done and once again help Amazon pioneer the e-commerce market, resulting in a net gain for them and their stakeholders.
 
 ### Literature Review
-Previous approaches in analyzing consumer behavior in the e-commerce industry are rooted in machine learning techniques used to understand and create personalized recommendations based on user behavior, preferences and historical interactions (Raji et al., 2024). These algorithms use data from entire customer-bases to determine and recommend items frequently bought by users with similar buying patterns. Such algorithms utilize machine learning techniques including neural networks, classification, Naïve Bayes, decision trees, logistic regression, and clustering to analyze buying patterns and create accurate recommendations (Raji et al., 2024; Gupta et al., 2024). Beyond analyzing buying patterns, previous research also includes sentiment analysis based on customer reviews of products, uncovering opinions of consumers and providing insight into future purchase or repurchase patterns (Gupta et al., 2024).
+Previous approaches in analyzing consumer behavior in the e-commerce industry are rooted in machine learning techniques used to understand and create personalized recommendations based on user behavior, preferences and historical interactions[^1]. These algorithms use data from entire customer-bases to determine and recommend items frequently bought by users with similar buying patterns. Such algorithms utilize machine learning techniques including neural networks, classification, Naïve Bayes, decision trees, logistic regression, and clustering to analyze buying patterns and create accurate recommendations[^1] [^2]. Beyond analyzing buying patterns, previous research also includes sentiment analysis based on customer reviews of products, uncovering opinions of consumers and providing insight into future purchase or repurchase patterns[^2].
 
-Limited research has been performed to understand the impact of demographics on e-commerce buying patterns. Al-Otaibi (2024) employed deep learning models to predict whether a customer is likely or not likely to buy an item based on age and income, in addition to buying patterns. However, Al-Otaibi (2024) suggested that the use of additional demographic information could provide deeper insights into what drives consumer purchase patterns, allowing for more accurate personalized recommendations.
+Limited research has been performed to understand the impact of demographics on e-commerce buying patterns. Al-Otaibi (2024) employed deep learning models to predict whether a customer is likely or not likely to buy an item based on age and income, in addition to buying patterns[^3]. However, Al-Otaibi (2024) suggested that the use of additional demographic information could provide deeper insights into what drives consumer purchase patterns, allowing for more accurate personalized recommendations[^3]
 
 Limitations of current research and recommendations exist, particularly regarding the lack of demographic analysis in current systems. Demographics play a large role in user behavior, making it difficult for systems that lack such data to target niche groups. The result is a system that is too general to accurately predict user needs and distracts users with suggestions that do not fit their needs and desires. Incorporating demographic analysis into recommendations is vital to improving consumer engagement with e-commerce platforms and recommendations.
 
@@ -62,8 +62,13 @@ The dataset we will be using contains 5 years worth of crowdsource Amazon purcha
 
 
 ### Risks
-Our system faces risks associated with the collection and use of demographic data, particularly the ethical collection and use of such data. Unethical data collection and use can contribute to prejudiced or biased recommendation algorithms, as well as a lack of trust amongst consumers (Gupta et al., 2024). Mitigating bias and ensuring ethical collection of demographic data is crucial to create an accurate and trusted model to enhance personalized recommendations on e-commerce platforms.
+Our system faces risks associated with the collection and use of demographic data, particularly the ethical collection and use of such data. Unethical data collection and use can contribute to prejudiced or biased recommendation algorithms, as well as a lack of trust amongst consumers[^2]. Mitigating bias and ensuring ethical collection of demographic data is crucial to create an accurate and trusted model to enhance personalized recommendations on e-commerce platforms.
 
 We also face a risk of overfitting our machine learning models to our data by targeting extremely niche groups of consumers. To mitigate this, we will utilize validation methods such as training and test sets and cross validation to evaluate our model.
 
+
+### References
+[^1]: Raji, M. et al., "E-commerce and consumer behavior: A review of AI-powered personalization and market trends." 2024.  
+[^2]: Gupta, K. et al., "E-Commerce Customer Behavior Using Machine Learning." 2024.  
+[^3]: Al-Otaibi, Y., "Enhancing e-Commerce Strategies: A Deep Learning Framework for Customer Behavior Prediction." 2024.
 
