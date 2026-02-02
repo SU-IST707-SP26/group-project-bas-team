@@ -3,9 +3,12 @@
 
 
 ### Team
-Alexa Lotano - POC  
-    Github ID: alexa-lotano
-
+1. Name: Alexa Lotano - POC <br>
+    GitHub ID: alexa-lotano
+2. Name: Shahaan Khan - POC <br>
+    GitHub ID: ShahaanK
+3. Name: Ben Euto - POC <br>
+    GitHub ID: bene01-git
 
 ### Introduction
 For this project, we wish to examine customer behavior when it comes to e-commerce websites, mainly Amazon. Amazon is the world's biggest online retailer, with millions of active users worldwide and billions of monthly visits. With this in mind, we feel that it is worth taking a closer look at what users shop for, what might influence what they shop for, and what information could be revealed about the different kinds of users that populate Amazon's services.
@@ -55,10 +58,63 @@ The dataset we will be using contains 5 years worth of crowdsource Amazon purcha
 
 #### Methods
 
+As we continue to work through this course, we may find these approaches to not be optimal and as such are subject to change when better solutions or methodolgy is found.
 
+**Preprocessing and Transformations**
+
+Our preprocessing will involve several cleaning transformations to prepare the data for modeling:
+
+1. **Data Integration**: We will join `amazon-purchases.csv` with `survey.csv` using the `SurveyResponseID` field to create a singular dataset combining purchase behavior with demographic attributes.
+
+2. **Temporal Feature Engineering**: Order dates will be parsed and used to construct sequential purchase histories for each user. We will create time-based features including purchase frequency, time between purchases, and seasonal purchasing patterns.
+
+3. **Categorical Encoding**: Product categories will be encoded using label encoding or one-hot encoding depending on the model requirements. Demographic variables (age groups, income brackets, location) will similarly be transformed into numerical representations. We will check for which will yield the best results.
+
+4. **Sequence Construction**: For each user, we will construct ordered sequences of product categories purchased over time. These sequences will serve as input for our temporal models, with the target being the next category in the sequence.
+
+5. **Handling Missing Data**: We will assess the extent of missing values in both purchase and survey data and apply imputation strategies or remove the data based on it's nature.
+
+6. **Train/Test Split with Temporal Ordering**: To simulate real-world conditions, we will use earlier purchases for training and later purchases for testing, preserving the temporal structure of the data. Instead of the traditional 80/20 split.
+
+
+**Modeling Techniques**
+
+We will are hoping to use a multi-pronged modeling approach to capture different aspects of purchasing behavior. The best modeling technique will be used at the end. As the course progresses, we may learn more optimal modeling techniques that will be added or exchanged with the ones listed below:
+
+1. **Association Rule Mining (Apriori/FP-Growth)**: To identify frequently co-purchased product categories and establish baseline association patterns that indicate what products tend to follow others.
+
+2. **Sequential Pattern Mining**: To discover common purchase sequences across users and identify temporal patterns in buying behavior.
+
+3. **Classification Models**: We will train Random Forest and Gradient Boosting (XGBoost) classifiers to predict the next product category a user is likely to purchase, using demographic features and recent purchase history as inputs.
+
+4. **LSTM Networks**: Long Short-Term Memory networks will be explored to model the sequential nature of purchase histories and capture long-term dependencies in buying patterns.
+
+5. **Wide & Deep Neural Networks**: We will implement a Wide & Deep neural network architecture, which was originally developed for recommendation systems. Using the "wide" and "deep" paths to memorizes direct associations between demographic features and purchase patterns while the "deep" path learns abstract, non-obvious relationships through multiple hidden layers. (Chapter 10 introduces this approach)[^4]
+
+6. **Clustering for Customer Segmentation**: K-Means or hierarchical clustering will be applied to demographic and behavioral features to identify distinct customer segments, allowing for segment-specific prediction models.
+
+**Evaluation Strategy**
+
+With stakeholders in mind we plan to conduct the following types of evalutation to ensure our results are of the highest accuracy and recommendations are truly useful:
+
+- **Accuracy Metrics**: We will use precision, recall, and F1-score to evaluate next-category prediction performance, with focus on precision as this our key finding.
+
+- **Top-K Accuracy**: We will measure whether the true next purchase appears in the top 3 or top 5 predicted categories.
+
+- **Segment-Level Analysis**: We will evaluate model performance across different demographic segments to ensure our system serves diverse user groups equitably and effectively.
+
+- **Cross-Validation**: K-fold cross-validation will be employed to ensure model robustness and prevent overfitting.
 
 ### Project Plan
-
+| Period | Activity | Milestone |
+|--------|----------|-----------|
+| 1/26 - 2/8 | Stakeholder analysis and requirements gathering. Initial data exploration and quality assessment. Begin preprocessing. | Completed stakeholder analysis. Data quality report generated. Additional datasets identified as necessary. |
+| 2/9 - 2/22 | Data preprocessing. Feature engineering for temporal and demographic variables. Sequence construction for users. | Unified dataset created. Feature set finalized. Purchase sequences constructed for all users. |
+| 2/23 - 3/8 | Association rule mining implementation. Initial classification model development (Random Forest baseline). Begin customer segmentation clustering. | Baseline association rules identified. Initial classifier trained with preliminary accuracy metrics. Customer segments defined. |
+| 3/9 - 3/22 | LSTM model development and training. Hyperparameter tuning for classification models. Comparative analysis across modeling approaches. Midterm report developed | LSTM model operational. Candidate modeling approaches finalized based on performance comparison. Midterm report submitted |
+| 3/23 - 4/5 | Model refinement and optimization. Segment-specific model evaluation. Begin integration of demographic features into best-performing models. | Optimized models with demographic integration. Performance metrics documented across customer segments. |
+| 4/6 - 4/19 | Final model evaluation and validation. Results interpretation and visualization. Documentation and report writing. | Final model selected. Comprehensive evaluation complete. Draft report and visualizations ready. |
+| 4/20 - 5/3 | Final presentation preparation. Code cleanup and repository organization. Final report completion and submission. | Project deliverables complete. Final presentation delivered. All documentation and code submitted. |
 
 
 ### Risks
@@ -71,4 +127,4 @@ We also face a risk of overfitting our machine learning models to our data by ta
 [^1]: Raji, M. et al., "E-commerce and consumer behavior: A review of AI-powered personalization and market trends." 2024.  
 [^2]: Gupta, K. et al., "E-Commerce Customer Behavior Using Machine Learning." 2024.  
 [^3]: Al-Otaibi, Y., "Enhancing e-Commerce Strategies: A Deep Learning Framework for Customer Behavior Prediction." 2024.
-
+[^4] Aurélien Géron, "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, Third Edition", 2022.
