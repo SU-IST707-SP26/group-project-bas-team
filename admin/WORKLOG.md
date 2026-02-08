@@ -24,7 +24,7 @@
 **Files Created:**
 - proposal/submission.md
 - admin/VISION.md
-- admin/WORLOG.md
+- admin/WORKLOG.md
 - admin/WORKPLAN.md
 
 **Impact:** M1.T2 and M1.T3 complete. Dataset identified. Proposal created and submitted. Project infrastructure in place.
