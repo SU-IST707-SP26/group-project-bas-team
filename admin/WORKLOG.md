@@ -1,14 +1,20 @@
 # WORKLOG.md
-## 2026-02-22 – Updated EDA (Ben)
+## 2026-02-22 – Updated EDA (Alexa and Ben)
 
-**Context:** Trying a different strategy to tweak NAs and redoing EDA
+**Context:** Merging the purchase and survey data and early data cleaning steps
 
 **Work Completed:**
-- (Ben) Switched from imputing to dropping NAs as advised by team. Performed visualizations.
+- (Alexa) Merge the purchase and survey datasets
+- (Alexa) Remove rows with excessing missing data
+- (Alexa) Begin imputing missing values
+- (Ben) Switched from imputing to dropping NAs as advised by team. Performed visualizations
 
-**Impact:** Data updated and ready to use.
+**Files Created:**
+- work/03-data-merge-and-cleaning.ipynb
 
-**Next Steps**: Reading in more datasets that could potentially help us build a conclusion.
+**Impact:** M3.T1 completed. Merged datasets into a single dataframe and began imputing categorical data.
+
+**Next Steps**: Continue data cleaning and preparation (imputing nulls, scaling numeric data, etc.)
 
 ## 2026-02-20 – Third Team Meeting and Proposal Creation (Team)
 
@@ -21,16 +27,23 @@
 
 **Next Steps**: Potentially exploring other datasets.
 
-## 2026-02-15 – Initial EDA (Ben)
+## 2026-02-15 – Dataset Upload and Exploratory Data Analysis (Alexa and Ben)
 
-**Context:** Reading in the dataset and performing Exploratory Data Analysis
+**Context:** Exploratory analysis and visualization of raw data before cleaning and merging
 
 **Work Completed:**
-- (Ben) Read in the dataset of interest, examined descriptive statistics, and provided visualizations of columns of interest.
+- (Alexa) Upload and read amazon purchase data and survey data
+- (Ben) Explore and visualize raw amazon purchase data
+- (Alexa) Explore and visualize raw survey data. Identify nulls and generate ideas to prepare the data for analysis
 
-**Impact:** Data read in and ready to use.
+**Files Created:**
+- work/01-purchase-data-eda.ipynb
+- work/02-survey-data-eda.ipynb
 
-**Next Steps**: Checking in with team to see if more EDA needs to be applied or if we can explore other datasets.
+**Impact:** M2.T1 and M2.T2 completed. Explored raw datasets to understand the data and identified necessary cleaning and preparation steps.
+
+**Next Steps**: Merge amazon purchase data and survey data. Begin cleaning the data and preparing it for analysis (imputing nulls, scaling numeric data, etc.)
+
 
 ## 2026-02-08 – VISION.md and WORKPLAN.md Updated (Alexa)
 

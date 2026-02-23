@@ -8,13 +8,13 @@
 - [✅] M1.T3 — Create appropriate files in project repository (Alexa)
 
 ### Milestone 2: Data Acquisition
-- [] M2.T1 — Download Open E-commerce dataset from Harvard Dataverse (Alexa)
-- [] M2.T2 — Initial exploratory data analysis
+- [✅] M2.T1 — Download Open E-commerce dataset from Harvard Dataverse (Alexa)
+- [✅] M2.T2 — Initial exploratory data analysis
 
 ### Milestone 3: Data Preparation
-- [] M3.T1 — Join purchase data with survey data on SurveyResponseID field
-- [] M3.T2 — Clean full dataset (remove or impute missing values, standardize data, encode categorical data)
-- [] M3.T3 Identify and remove irrelevant features
+- [✅] M3.T1 — Join purchase data with survey data on SurveyResponseID field
+- [⏳] M3.T2 — Clean full dataset (remove or impute missing values, standardize data, encode categorical data)
+- [⏳] M3.T3 Identify and remove irrelevant features
 - [] M3.T4 Conduct temporal feature engineering
 
 ### Milestone 4: Modeling
