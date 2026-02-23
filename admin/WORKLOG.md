@@ -1,4 +1,36 @@
 # WORKLOG.md
+## 2026-02-22 – Updated EDA (Ben)
+
+**Context:** Trying a different strategy to tweak NAs and redoing EDA
+
+**Work Completed:**
+- (Ben) Switched from imputing to dropping NAs as advised by team. Performed visualizations.
+
+**Impact:** Data updated and ready to use.
+
+**Next Steps**: Reading in more datasets that could potentially help us build a conclusion.
+
+## 2026-02-20 – Third Team Meeting and Proposal Creation (Team)
+
+**Context:** Updating admin files and checking in with teammates
+
+**Work Completed:**
+- (Team) Set clear goals for the next week, including tweaking EDA
+
+**Impact:** Data read in.
+
+**Next Steps**: Potentially exploring other datasets.
+
+## 2026-02-15 – Initial EDA (Ben)
+
+**Context:** Reading in the dataset and performing Exploratory Data Analysis
+
+**Work Completed:**
+- (Ben) Read in the dataset of interest, examined descriptive statistics, and provided visualizations of columns of interest.
+
+**Impact:** Data read in and ready to use.
+
+**Next Steps**: Checking in with team to see if more EDA needs to be applied or if we can explore other datasets.
 
 ## 2026-02-08 – VISION.md and WORKPLAN.md Updated (Alexa)
 
