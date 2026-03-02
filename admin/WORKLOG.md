@@ -5,15 +5,20 @@
 **Work Completed:**
 - (Alexa) Finished cleaning dataset, including imputing missing data, and renaming columns
 - (Alexa) Began data transformation, including exploding multi-value columns, converting data types, and feature engineering
-- (Ben) StandardScaler and PCA inititated for future use
+- (Ben) StandardScaler and PCA inititated for future use+
+- (Shahaan) Dropped irrelevant features, added ordinal encoding to ordered categorical columns, applied binary encoding to Yes/No columns, applied label encoding to nominal categorical columns, and left comment on to save cleaned dataset to `data/cleaned_data.pkl` and `data/cleaned_data.csv`
+
 
 **Files Created:**
 - work/04-dimensionality-reduction-and-visualization.ipynb
 - checkpoint/submission.ipynb
 
+**Files Modified:**
+- work/03-data-merge-and-cleaning.ipynb
+
 **Impact:** Dataset fully cleaned. Began data transformation and feature engineering. Code for dimensionality reduction set up.
 
-**Next Steps**: Encode categorical data. Perform dimensionality reduction and visualize dataset. Begin modeling data.
+**Next Steps**: Perform dimensionality reduction and visualize dataset. Begin modeling data.
 
 ## 2026-02-25 - Fourth Team Meeting and Check-in (Team)
 **Context:** Updating admin files, checking in with teammates, and settings goals for following week
