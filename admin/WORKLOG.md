@@ -1,16 +1,19 @@
 # WORKLOG.md
-## 2026-03-01 - Dimensionality Reduction Begins (Team)
-**Context:** Updating admin files, beginning dimensionality reduction work
+## 2026-03-01 - Dimensionality Reduction and Data Visualization (Team)
+**Context:** Updating admin files, cleaning and transforming data, and beginning dimensionality reduction and visualization work
 
 **Work Completed:**
-- (Team) Merged and cleaned dataset recreated, StandardScaler and PCA inititated for future use
+- (Alexa) Finished cleaning dataset, including imputing missing data, and renaming columns
+- (Alexa) Began data transformation, including exploding multi-value columns, converting data types, and feature engineering
+- (Ben) StandardScaler and PCA inititated for future use
 
 **Files Created:**
 - work/04-dimensionality-reduction-and-visualization.ipynb
+- checkpoint/submission.ipynb
 
-**Impact:** Survey data read in, EDA performed. Dimensionality reduction started. 
+**Impact:** Dataset fully cleaned. Began data transformation and feature engineering. Code for dimensionality reduction set up.
 
-**Next Steps**: Continuing dimensionality reduction and visualization work, as well as deciding which plot to use.
+**Next Steps**: Encode categorical data. Perform dimensionality reduction and visualize dataset. Begin modeling data.
 
 ## 2026-02-25 - Fourth Team Meeting and Check-in (Team)
 **Context:** Updating admin files, checking in with teammates, and settings goals for following week
@@ -20,7 +23,7 @@
 
 **Impact:** Survey data read in, EDA performed. Dimensionality reduction started.
 
-**Next Steps**: Beginning dimensionality reduction and visualization work.
+**Next Steps**: Finish cleaning dataset. Begin dimensionality reduction and visualization work.
 
 ## 2026-02-22 – Updated EDA (Alexa and Ben)
 
