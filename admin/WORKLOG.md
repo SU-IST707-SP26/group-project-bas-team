@@ -1,4 +1,19 @@
 # WORKLOG.md
+
+## 2026-03-02 - 
+**Context:** 
+
+**Work Completed:**
+- 
+
+**Files Created:**
+- work/04-data-transformation
+- renamed: work/05-dimensionality-reduction-and-visualization.ipynb
+
+**Impact:** 
+
+**Next Steps**:
+
 ## 2026-03-01 - Dimensionality Reduction and Data Visualization (Team)
 **Context:** Updating admin files, cleaning and transforming data, and beginning dimensionality reduction and visualization work
 
@@ -8,15 +23,11 @@
 - (Ben) StandardScaler and PCA inititated for future use+
 - (Shahaan) Dropped irrelevant features, added ordinal encoding to ordered categorical columns, applied binary encoding to Yes/No columns, applied label encoding to nominal categorical columns, and left comment on to save cleaned dataset to `data/cleaned_data.pkl` and `data/cleaned_data.csv`
 
-
 **Files Created:**
 - work/04-dimensionality-reduction-and-visualization.ipynb
 - checkpoint/submission.ipynb
 
-**Files Modified:**
-- work/03-data-merge-and-cleaning.ipynb
-
-**Impact:** Dataset fully cleaned. Began data transformation and feature engineering. Code for dimensionality reduction set up.
+**Impact:** Dataset nearly fully cleaned. Began data transformation and feature engineering. Code for dimensionality reduction set up.
 
 **Next Steps**: Perform dimensionality reduction and visualize dataset. Begin modeling data.
 
