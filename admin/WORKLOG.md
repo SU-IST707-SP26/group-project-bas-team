@@ -1,18 +1,20 @@
 # WORKLOG.md
 
-## 2026-03-02 - 
-**Context:** 
+## 2026-03-02 - Completed Data Transformation and Began Dimensionality Reduction (Alexa)
+**Context:** Finished encoding data, began dimensionality reduction and data visualization efforts
 
 **Work Completed:**
-- 
+- (Alexa) Data transformations completed with revisions to data encoding
+- (Alexa) Began dimensionality reduction using PCA and visualization of reduced data
+- (Alexa) Sampled original survey data to create smaller dataset to mitigate kernel crashes
 
 **Files Created:**
 - work/04-data-transformation
 - renamed: work/05-dimensionality-reduction-and-visualization.ipynb
 
-**Impact:** 
+**Impact:** Limited data significantly. Data transformations complete and dimensionality reduction begun.
 
-**Next Steps**:
+**Next Steps**: Complete dimensionality reduction efforts and begin modeling
 
 ## 2026-03-01 - Dimensionality Reduction and Data Visualization (Team)
 **Context:** Updating admin files, cleaning and transforming data, and beginning dimensionality reduction and visualization work
