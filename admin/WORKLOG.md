@@ -1,5 +1,20 @@
 # WORKLOG.md
 
+## 2026-03-04 - Dimensionality Reduction, Modeling, and Midterm Checkpoint (Alexa)
+**Context:** Completed dimensionality reduction efforts and began modeling the data
+
+**Work Completed:**
+- (Alexa) Assessed suitability of factor analysis and attempted UMAP to reduce dimensionality, and compared results to PCA
+- (Alexa) Fit a simple K-nearest neighbors classifier to the reduced data and assessed performance
+- (Alexa) Contributed to midterm checkpoint submission file
+
+**Files Created:**
+- work/06-modeling
+
+**Impact:** M4.T1, M4.T2, and M5.T1 complete. Dimensionality reduction complete and modeling efforts begun. Preprocessing, Modeling, and Problems & Challenges sections complete in midterm checkpoint submission, with Data section nearly complete.
+
+**Next Steps**: Continue modeling data and complete midterm checkpoint submission.
+
 ## 2026-03-02 - Completed Data Transformation and Began Dimensionality Reduction (Alexa)
 **Context:** Finished encoding data, began dimensionality reduction and data visualization efforts
 
