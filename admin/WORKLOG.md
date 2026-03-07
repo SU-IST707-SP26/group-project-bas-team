@@ -1,5 +1,26 @@
 # WORKLOG.md
 
+## 2026-03-06 - Midterm Checkpoint Submission (Team)
+**Context:** Finalizing and submitting the Checkpoint 2 midterm report
+
+**Work Completed:**
+- (Team) Completed midterm checkpoint submission notebook
+- (Shahaan) Added EDA visualizations to submission: purchase price distribution, purchase volume by year, age × income heatmap, top 15 product categories
+- (Shahaan) Fixed data leakage in StandardScaler and PCA. Now fit on training data only, transform applied to test
+- (Alexa) Compared KNN accuracy across reduction methods (no reduction: 3.38%, PCA: 1.50%, UMAP: 0.96%)
+- (Team) Attempted Decision Tree and Random Forest classifiers — encountered memory allocation errors (~3.3 GB) due to dataset size (157K rows, 93 components, 1,600+ categories)
+- (Team) Updated Overview section to address instructor feedback on narrowing project scope
+- (Team) Converted preprocessing code cells to markdown code fences (reference only, not executable)
+- (Team) Added Problems & Challenges section documenting memory constraints, data leakage fix, and ethics considerations
+- (Team) Added Next Steps with week-by-week timeline through final report (5/5)
+
+**Files Created:**
+- checkpoint/submission.ipynb
+
+**Impact:** Midterm checkpoint submitted. Baseline KNN model established. Key finding: demographics alone are insufficient to predict product categories, sequential purchase features needed. Memory constraints identified as primary blocker for tree-based models.
+
+**Next Steps**: Define prediction window. Begin sequential feature engineering (purchase sequences per user, time between purchases, category frequency). Consolidate rare categories to reduce target cardinality and address memory issues.
+
 ## 2026-03-04 - Dimensionality Reduction, Modeling, and Midterm Checkpoint (Alexa)
 **Context:** Completed dimensionality reduction efforts and began modeling the data
 
