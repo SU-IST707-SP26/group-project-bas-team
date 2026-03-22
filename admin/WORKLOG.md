@@ -1,5 +1,20 @@
 # WORKLOG.md
 
+## 2026-03-06 - Began association rule mining (Alexa)
+**Context:** Attempting association rule mining as per professor suggestion
+
+**Work Completed:**
+- (Alexa) Saved a copy of the data before encoding steps to facilitate association rule mining 
+- (Alexa) Began association rule mining attempts to identify item categories that are commonly purchased by the same customer
+
+**Files Created:**
+- work/07-association-rule-mining.ipynb
+- data/data_unencoded
+
+**Impact:** Identified category sets with high support and/or high confidence, which will help us identify what categories of items are often purchased by the same customer. This will serve as a starting point for recommendations by helping us understand if a customer purchases products from one category, which category we might recommend to them next.
+
+**Next Steps**: Continue association mining efforts and examine additional measures. Continue classification attempts. Discuss possibility of obtaining an Azure instance in order to mitigate memory issues.
+
 ## 2026-03-06 - Midterm Checkpoint Submission (Team)
 **Context:** Finalizing and submitting the Checkpoint 2 midterm report
 
@@ -13,9 +28,6 @@
 - (Team) Converted preprocessing code cells to markdown code fences (reference only, not executable)
 - (Team) Added Problems & Challenges section documenting memory constraints, data leakage fix, and ethics considerations
 - (Team) Added Next Steps with week-by-week timeline through final report (5/5)
-
-**Files Created:**
-- checkpoint/submission.ipynb
 
 **Impact:** Midterm checkpoint submitted. Baseline KNN model established. Key finding: demographics alone are insufficient to predict product categories, sequential purchase features needed. Memory constraints identified as primary blocker for tree-based models.
 
