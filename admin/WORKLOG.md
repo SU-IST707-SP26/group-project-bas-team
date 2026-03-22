@@ -1,5 +1,20 @@
 # WORKLOG.md
 
+## 2026-03-22 - Began Bayesian rule mining (Ben)
+**Context:** Attempting Bayesian rule mining based off association rule mining as per professor suggestion
+
+**Work Completed:**
+- (Ben) - Read in copy of the data before encoding steps to facilitate Bayesian rule mining
+- (Ben) - Began Bayesian rule mining attempts to identtify item categories that are commonly purchased by the same customer based on prior knowledge or probabilistic beliefs, essentially updating beliefs based on evidence
+
+**Files Created**
+- work/08-bayesian-rule-mining.ipynb
+- data/data_copy
+
+**Impact:** Identified category sets with high support and/or high confidence based on existing evidence found through association rule mining and probabilistic beliefs, ultimately updating beliefs on what categories of items are often purchased by the same customer and verifying or potentially disputing prior evidence regarding what to recommend customers based on what they purchase.
+
+**Next Steps:** Potentially continuing Bayesian rule mining efforts and examining additional measures as well as discussing possibility of obtaining an Azure instance during next team meeting.
+
 ## 2026-03-06 - Began association rule mining (Alexa)
 **Context:** Attempting association rule mining as per professor suggestion
 
