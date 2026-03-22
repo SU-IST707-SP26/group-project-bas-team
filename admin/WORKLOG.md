@@ -9,7 +9,6 @@
 
 **Files Created**
 - work/08-bayesian-rule-mining.ipynb
-- data/data_copy
 
 **Impact:** Identified category sets with high support and/or high confidence based on existing evidence found through association rule mining and probabilistic beliefs, ultimately updating beliefs on what categories of items are often purchased by the same customer and verifying or potentially disputing prior evidence regarding what to recommend customers based on what they purchase.
 
