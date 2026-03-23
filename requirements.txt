@@ -1,0 +1,20 @@
+# Core data science
+pandas
+numpy
+scipy
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# Dimensionality reduction
+umap-learn
+factor_analyzer
+
+# Association & Bayesian rule mining
+mlxtend
+pgmpy
+
+# Jupyter kernel support
+ipykernel
