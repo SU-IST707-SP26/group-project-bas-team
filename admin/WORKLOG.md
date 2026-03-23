@@ -1,11 +1,16 @@
 # WORKLOG.md
 
-## 2026-03-22 - Began Bayesian rule mining (Ben)
+## 2026-03-22 - Began Bayesian rule mining (Ben, Shahaan)
 **Context:** Attempting Bayesian rule mining based off association rule mining as per professor suggestion
 
 **Work Completed:**
 - (Ben) - Read in copy of the data before encoding steps to facilitate Bayesian rule mining
-- (Ben) - Began Bayesian rule mining attempts to identtify item categories that are commonly purchased by the same customer based on prior knowledge or probabilistic beliefs, essentially updating beliefs based on evidence
+- (Ben) - Began Bayesian rule mining attempts to identtify item categories that are commonly purchased by the same customer based on prior knowledge or probabilistic beliefs, essentially updating beliefs based on evidence+
+- (Shahaan) Fixed data path from Codespaces to relative path for local development in vscode and created requirements.txt for virtual environment setup
+- (Shahaan) Added Bayesian Network graph visualization using networkx
+- (Shahaan) Added display of top Bayesian rules filtered by Kemeny-Oppenheim measure
+- (Shahaan) Fit Bayesian Network parameters and displayed conditional probability tables (CPTs)
+- (Shahaan) Added category connectivity bar chart showing in/out degree per category
 
 **Files Created**
 - work/08-bayesian-rule-mining.ipynb

@@ -23,13 +23,14 @@
 
 ### Milestone 5: Modeling
 - [✅] M5.T1 — Split data into training and test sets by date
-- [⏳] M5.T2 — Association rule mining
+- [✅] M5.T2 — Association rule mining
 - [] M5.T3 — Sequential pattern mining
 - [] M5.T4 — Random forest model
 - [] M5.T5 — XGBoost model
 - [] M5.T6 — Long Short-Term Memory (LSTM) model
 - [] M5.T7 — Wide and deep neural networks
 - [] M5.T8 — Clustering methods
+- [⏳] M5.T9 — Bayesian rule mining
 
 ### Milestone 6: Evaluation
 - [] M6.T1 — Calculate precision, recall, and F1 scores
