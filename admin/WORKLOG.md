@@ -19,7 +19,7 @@
 
 **Next Steps:** Potentially continuing Bayesian rule mining efforts and examining additional measures as well as discussing possibility of obtaining an Azure instance during next team meeting.
 
-## 2026-03-06 - Began association rule mining (Alexa)
+## 2026-03-22 - Began association rule mining (Alexa)
 **Context:** Attempting association rule mining as per professor suggestion
 
 **Work Completed:**
