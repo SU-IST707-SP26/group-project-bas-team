@@ -1,5 +1,17 @@
 # WORKLOG.md
 
+## 2026-03-29 - Began Bayesian rule mining (Shahaan)
+**Context:** Attempting to add more data into dataset
+
+**Work Completed:**
+- (Shahaan) Met with Librarian on 3-24-2026 to find additional consumer data. Unsuccessful as she believes this data is good.
+
+**Files Created**
+-
+
+**Impact:** Looked for additional data with SU Librarian to no success 
+**Next Steps:**
+
 ## 2026-03-22 - Began Bayesian rule mining (Ben, Shahaan)
 **Context:** Attempting Bayesian rule mining based off association rule mining as per professor suggestion
 
@@ -11,6 +23,8 @@
 - (Shahaan) Added display of top Bayesian rules filtered by Kemeny-Oppenheim measure
 - (Shahaan) Fit Bayesian Network parameters and displayed conditional probability tables (CPTs)
 - (Shahaan) Added category connectivity bar chart showing in/out degree per category
+- (Shahaan) Added Bayesian Network graph visualization using networkx
+- (Shahaan) Met with Librarian on
 
 **Files Created**
 - work/08-bayesian-rule-mining.ipynb
