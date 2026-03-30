@@ -1,16 +1,25 @@
 # WORKLOG.md
 
+## 2026-03-22 - Continued Association Rule Mining (Alexa)
+**Context:** Continuing association rule mining and adding visualizations to identify itemsets with high support and lift.
+
+**Work Completed:**
+- (Alexa) Expanded association rule mining efforts to understand support and lift, in addition to confidence
+- (Alexa) Identified association rules with greatest support to understand itemsets that frequently occur together
+- (Alexa) Identified association rules with greatest lift to understand the relationships between antecedents and consequents (i.e., which antecedents increase the likelihood of which consequents the greatest)
+- (Alexa) Created heatmaps to visualize the itemsets with the greatest confidence, support, and lift
+
+**Impact:** Further association rule mining completed and results visualized to understand which itemsets have the greatest confidence, support, and lift
+
+**Next Steps:** 
+
 ## 2026-03-29 - Began Bayesian rule mining (Shahaan)
 **Context:** Attempting to add more data into dataset
 
 **Work Completed:**
 - (Shahaan) Met with Librarian on 3-24-2026 to find additional consumer data. Unsuccessful as she believes this data is good.
 
-**Files Created**
--
-
 **Impact:** Looked for additional data with SU Librarian to no success 
-**Next Steps:**
 
 ## 2026-03-22 - Began Bayesian rule mining (Ben, Shahaan)
 **Context:** Attempting Bayesian rule mining based off association rule mining as per professor suggestion
@@ -24,14 +33,13 @@
 - (Shahaan) Fit Bayesian Network parameters and displayed conditional probability tables (CPTs)
 - (Shahaan) Added category connectivity bar chart showing in/out degree per category
 - (Shahaan) Added Bayesian Network graph visualization using networkx
-- (Shahaan) Met with Librarian on
 
 **Files Created**
 - work/08-bayesian-rule-mining.ipynb
 
 **Impact:** Identified category sets with high support and/or high confidence based on existing evidence found through association rule mining and probabilistic beliefs, ultimately updating beliefs on what categories of items are often purchased by the same customer and verifying or potentially disputing prior evidence regarding what to recommend customers based on what they purchase.
 
-**Next Steps:** Potentially continuing Bayesian rule mining efforts and examining additional measures as well as discussing possibility of obtaining an Azure instance during next team meeting.
+**Next Steps:** Continuing Bayesian rule mining efforts and examining additional measures as well as discussing possibility of obtaining an Azure instance during next team meeting.
 
 ## 2026-03-22 - Began association rule mining (Alexa)
 **Context:** Attempting association rule mining as per professor suggestion
