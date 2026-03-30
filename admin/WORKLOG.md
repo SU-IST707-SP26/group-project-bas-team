@@ -1,5 +1,19 @@
 # WORKLOG.md
 
+## 2026-03-29 - Random Forest Model (Shahaan)
+**Context:** Building a Random Forest classifier for product category prediction (M5.T4)
+
+**Work Completed:**
+- (Shahaan) Created Random Forest notebook with baseline and tuned models on 10K subsample
+- (Shahaan) Performed feature importance analysis and hyperparameter tuning (RandomizedSearchCV)
+- (Shahaan) Evaluated with precision, recall, F1, confusion matrix, and 5-fold cross-validation
+- (Shahaan) Memory constraints required subsampling, full dataset (113K rows) caused OOM errors
+
+**Files Created:**
+- work/09-random-forest.ipynb
+
+**Next Steps:** Build XGBoost model (M5.T5)
+
 ## 2026-03-22 - Continued Association Rule Mining (Alexa)
 **Context:** Continuing association rule mining and adding visualizations to identify itemsets with high support and lift.
 
