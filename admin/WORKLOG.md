@@ -1,6 +1,6 @@
 # WORKLOG.md
 
-## 2026-04-05 - Wide & Deep Neural Network Creation
+## 2026-04-05 - Wide & Deep Neural Network Creation (Alexa and Ben)
 **Context:** Building MLP and Wide & Deep Neural Networks to classify the "Category" variable.
 
 **Work Completed:**
@@ -8,11 +8,13 @@
 - (Alexa) Created a Wide & Deep Neural Network model, which resulted in very poor training and test accuracy (training accuracy=0.03%, test accuracy=0.03%).
 - (Alexa) Removed some highly correlated features from the train and test sets to facilitate feature subsetting for wide & deep neural network. 
 - (Alexa) Ran MLP network and wide & deep network on smaller dataset. Minimal improvement to accuracy for both models.
+- (Ben) Subsetted and split features to train wide and deep components so they focus on different features.
+- (Ben) Tested accuracy with split features  (training accuracy=0.9% - 1.0%, testing accuracy=6.5%).
 
 **Files Created:**
 - work/10-neural-networks.ipynb
 
-**Next Steps:** Continue building neural networks, splitting features so that the wide and deep components focus on different features. Tune hyperparameters to improve neural networks (i.e., activation, epochs).
+**Next Steps:** Continue building neural networks, tune hyperparameters to improve neural networks (i.e., activation, epochs).
 
 ## 2026-03-29 - Random Forest Model (Shahaan)
 **Context:** Building a Random Forest classifier for product category prediction (M5.T4)
