@@ -1,5 +1,18 @@
 # WORKLOG.md
 
+## 2026-04-10 - Wide & Deep Neural Network Hyperparameter Tuning (Alexa)
+**Context:** Tuning hyperparameters of previously built neural networks. 
+
+**Work Completed:**
+- (Alexa) Added additional layers and neurons to wide & deep neural network
+- (Alexa) Implemented validation_split hyperparameter in fit() methods to monitor and prevent overfitting
+- (Alexa) Implemented EarlyStopping and ReduceLROnPlateau callbacks to wide & deep neural network
+- (Alexa) Tested our best wide & deep neural network with different activation functions in the inner layers, including ELU, SELU, GELU, Swish, and Mish
+
+**Impact:** Tuned models did not improve results. Best accuracy of all of our neural networks is 6.4%.
+
+**Next Steps:** Continue building neural networks. Build XGBoost model. Begin identifying the best models to present.
+
 ## 2026-04-05 - Wide & Deep Neural Network Creation (Alexa and Ben)
 **Context:** Building MLP and Wide & Deep Neural Networks to classify the "Category" variable.
 
@@ -9,7 +22,7 @@
 - (Alexa) Removed some highly correlated features from the train and test sets to facilitate feature subsetting for wide & deep neural network. 
 - (Alexa) Ran MLP network and wide & deep network on smaller dataset. Minimal improvement to accuracy for both models.
 - (Ben) Subsetted and split features to train wide and deep components so they focus on different features.
-- (Ben) Tested accuracy with split features  (training accuracy=0.9% - 1.0%, testing accuracy=6.5%).
+- (Ben) Tested accuracy with split features  (training accuracy=0.9% - 1.0%, testing accuracy=6.4%).
 
 **Files Created:**
 - work/10-neural-networks.ipynb
