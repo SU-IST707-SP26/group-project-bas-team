@@ -1,5 +1,18 @@
 # WORKLOG.md
 
+## 2026-04-12 - XGBoost Model (Shahaan)
+**Context:** Building an XGBoost classifier for product category prediction (M5.T5)
+
+**Work Completed:**
+- (Shahaan) Created XGBoost notebook mirroring the Random Forest notebook structure for comparability
+- (Shahaan) Built baseline and tuned models with feature importance, hyperparameter tuning (RandomizedSearchCV), and 5-fold cross-validation
+- (Shahaan) Used `tree_method='hist'`, `n_jobs=1`, and 10K subsample to stay within memory constraints
+
+**Files Created:**
+- work/11-xgboost.ipynb
+
+**Next Steps:** Run and evaluate on Azure; compare results against Random Forest and Wide & Deep NN benchmarks.
+
 ## 2026-04-10 - Wide & Deep Neural Network Hyperparameter Tuning (Alexa)
 **Context:** Tuning hyperparameters of previously built neural networks. 
 
