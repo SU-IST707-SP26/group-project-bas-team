@@ -15,7 +15,7 @@
 - [✅] M3.T1 — Join purchase data with survey data on SurveyResponseID field
 - [✅] M3.T2 — Clean full dataset (remove or impute missing values, standardize data, encode categorical data, convert data types)
 - [✅] M3.T3 Identify and remove irrelevant features
-- [⏳] M3.T4 Conduct temporal feature engineering
+- [✅] M3.T4 Conduct temporal feature engineering
 
 ### Milestone 4: Visualize Data
 - [✅] M4.T1 Perform dimensionality reduction on cleaned dataset
@@ -27,8 +27,8 @@
 - [] M5.T3 — Sequential pattern mining
 - [⏳] M5.T4 — Random forest model - Shahaan
 - [⏳] M5.T5 — XGBoost model - Shahaan
-- [] M5.T6 — Long Short-Term Memory (LSTM) model
-- [⏳] M5.T7 — Wide and deep neural networks - Alexa
+- [✅] M5.T6 — Long Short-Term Memory (LSTM) model
+- [✅] M5.T7 — Wide and deep neural networks - Alexa
 - [] M5.T8 — Clustering methods
 - [⏳] M5.T9 — Bayesian rule mining
 

@@ -1,5 +1,21 @@
 # WORKLOG.md
 
+## 2026-04-14 - Sequential Feature Engineering and Long Short Term Memory Model Creation (Alexa)
+**Context:** Adding features based on order date by customer and creating a recurrent neural network using LSTM layers.
+
+**Work Completed:**
+- (Alexa) Added temporal features including purchase order grouped by customer and days since last purchase. Added Survey ResponseID back into the data and encoded using a label encoder.
+- (Alexa) Re-ran our best performing neural network with the new data. Very slight improvement noted (training accuracy=12.6%, test accuracy=7.0%)
+- (Alexa) Created a new neural network using an LSTM layer and reshaped the data appropriately to fit the model. 
+- (Alexa) Added additional layers to LSTM network and tuned hyperparameters. Unable to improve accuracy using LSTM networks.
+
+**Files Created:**
+- work/12-lstm.ipynb
+
+**Impact:** M3.T4 and M5.T6 completed. Best accuracy on the test data thus far is approximately 7.0%.
+
+**Next Steps:** Identify best models and begin building presentation. Continue hyperparameter tuning of models in attempt to improve accuracy.
+
 ## 2026-04-12 - XGBoost Model (Shahaan)
 **Context:** Building an XGBoost classifier for product category prediction (M5.T5)
 
@@ -22,7 +38,7 @@
 - (Alexa) Implemented EarlyStopping and ReduceLROnPlateau callbacks to wide & deep neural network
 - (Alexa) Tested our best wide & deep neural network with different activation functions in the inner layers, including ELU, SELU, GELU, Swish, and Mish
 
-**Impact:** Tuned models did not improve results. Best accuracy of all of our neural networks is 6.4%.
+**Impact:** M5.T7 completed. Tuned models did not improve results. Best accuracy of all of our neural networks is 6.9%.
 
 **Next Steps:** Continue building neural networks. Build XGBoost model. Begin identifying the best models to present.
 
@@ -30,7 +46,7 @@
 **Context:** Building MLP and Wide & Deep Neural Networks to classify the "Category" variable.
 
 **Work Completed:**
-- (Alexa) Built a simple MLP network for classification (training accuracy=12.6%, test accuracy=6.8%).
+- (Alexa) Built a simple MLP network for classification (training accuracy=12.6%, test accuracy=6.9%).
 - (Alexa) Created a Wide & Deep Neural Network model, which resulted in very poor training and test accuracy (training accuracy=0.03%, test accuracy=0.03%).
 - (Alexa) Removed some highly correlated features from the train and test sets to facilitate feature subsetting for wide & deep neural network. 
 - (Alexa) Ran MLP network and wide & deep network on smaller dataset. Minimal improvement to accuracy for both models.
