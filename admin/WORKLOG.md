@@ -1,4 +1,17 @@
 # WORKLOG.md
+## 2026-04-19 - Beginning the Process of the Final Report (All)
+**Context:** Our work has begun to culminate into a final report summarizing our findings and bringing us closer to a conclusion.
+
+**Work Completed:**
+- (Ben) Created new folder finalreport within repository
+- (Ben) Created new file, draft.md, in finalreport folder
+
+**Files Created:**
+- finalreport/draft.md
+
+**Impact:** As we begin to conclude our work, the process has commenced on creating a final report in which we will summarize our findings and determine a final conclusion
+
+**Next Steps:** Finish up any remaining work left and begin work on drafting our final report
 
 ## 2026-04-14 - Sequential Feature Engineering and Long Short Term Memory Model Creation (Alexa)
 **Context:** Adding features based on order date by customer and creating a recurrent neural network using LSTM layers.
