@@ -1,17 +1,28 @@
 # WORKLOG.md
 
+## 2026-04-20 - Final Neural Network Hyperparameter Tuning (Alexa)
+**Context:** Ran previously built code to tune neural network hyperparameters
+
+**Work Completed:**
+- (Alexa) Revised code in all neural network notebooks to remove categories that are not present in the training set from the test set prior to training and testing and reran code. Improved training accuracy of best model (training accuracy=11.5%, test accuracy=7.1%)
+- (Alexa) Ran code to test different optimizers and regularization techniques. Hyperparameter tuning did not improve accuracy.
+
+**Impact:** Best accuracy is currently 7.1%.
+
+**Next Steps:** Begin work on final project presentation and report.
+
 ## 2026-04-19 - Final Neural Network Hyperparameter Tuning (Alexa)
 **Context:** Tested various optimizers and regularization techniques to attempt to improve existing neural networks.
 
 **Work Completed:**
-- (Alexa) Recreated our best performing neural network and tested different optimizers, including RMSprop, Adagrad, Adamax, Nadam, and AdamW.
+- (Alexa) Recreated our best performing neural network and built code to test different optimizers, including RMSprop, Adagrad, Adamax, Nadam, and AdamW.
 - (Alexa) Began implementing various regularization techniques, including L1, L2, Dropout, and Max-Norm Regularization.
-- (Alexa) Revised code in long short term memory file and reran. No improvement in accuracy noted.
+- (Alexa) Revised code in long short term memory file and reran. Removed callbacks, as our models consistently performed better on training data without them. Very slight improvement in accuracy noted.
 
 **Files Created:**
 - work/13-neural-network-tuning.ipynb
 
-**Impact:** Still no improvement in accuracy noted. Best training accuracy remains at 7.0%.
+**Impact:** Very minor improvement in accuracy noted (<0.1% difference). Best training accuracy remains at 7.0%.
 
 **Next Steps:** Complete and run models using regularization techniques. Fix code in neural network tuning file and rerun. Transfer to Azure instance if necessary. Identify best neural network overall. Begin work on final project presentation and report.
 
@@ -47,7 +58,7 @@
 
 **Work Completed:**
 - (Alexa) Added temporal features including purchase order grouped by customer and days since last purchase. Added Survey ResponseID back into the data and encoded using a label encoder.
-- (Alexa) Re-ran our best performing neural network with the new data. Very slight improvement noted (training accuracy=12.6%, test accuracy=7.0%)
+- (Alexa) Re-ran our best performing neural network with the new data. Very slight improvement noted (training accuracy=12.0%, test accuracy=7.0%)
 - (Alexa) Created a new neural network using an LSTM layer and reshaped the data appropriately to fit the model. 
 - (Alexa) Added additional layers to LSTM network and tuned hyperparameters. Unable to improve accuracy using LSTM networks.
 
