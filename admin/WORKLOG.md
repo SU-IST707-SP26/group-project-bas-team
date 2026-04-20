@@ -1,4 +1,17 @@
 # WORKLOG.md
+## 2026-04-19 - Beginning the Process of the Final Report (All)
+**Context:** Our work has begun to culminate into a final report summarizing our findings and bringing us closer to a conclusion.
+
+**Work Completed:**
+- (Ben) Created new folder finalreport within repository
+- (Ben) Created new file, draft.md, in finalreport folder
+
+**Files Created:**
+- finalreport/draft.md
+
+**Impact:** As we begin to conclude our work, the process has commenced on creating a final report in which we will summarize our findings and determine a final conclusion
+
+**Next Steps:** Finish up any remaining work left and begin work on drafting our final report
 
 ## 2026-04-19 - Random Forest and XGBoost Full-Data Training Attempts (Shahaan)
 **Context:** Attempting to run notebooks 09 and 11 on the full training dataset (113K rows) instead of the 10K subsample.
