@@ -1,5 +1,16 @@
 # WORKLOG.md
 
+## 2026-04-19 - Random Forest and XGBoost Full-Data Training Attempts (Shahaan)
+**Context:** Attempting to run notebooks 09 and 11 on the full training dataset (113K rows) instead of the 10K subsample.
+
+**Work Completed:**
+- (Shahaan) Removed 10K subsample from notebooks 09 and 11; switched to full 113K training data for testing - Failed.
+- (Shahaan) Fixed NaN F1 scores in RandomizedSearchCV by using `make_scorer` with `zero_division=0`
+- (Shahaan) Added 30K-row search subsample to avoid RAM fragmentation during hyperparameter search
+- (Shahaan) Added `USE_GPU` toggle to notebook 11 to switch between RTX 4060 and CPU
+
+**Next Steps:** Still working on getting notebooks 09 and 11 to complete successfully locally. Will push to Azure (NC6s_v3) for further testing.
+
 ## 2026-04-14 - Sequential Feature Engineering and Long Short Term Memory Model Creation (Alexa)
 **Context:** Adding features based on order date by customer and creating a recurrent neural network using LSTM layers.
 
