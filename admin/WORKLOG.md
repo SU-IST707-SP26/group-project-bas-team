@@ -1,4 +1,20 @@
 # WORKLOG.md
+
+## 2026-04-19 - Final Neural Network Hyperparameter Tuning (Alexa)
+**Context:** Tested various optimizers and regularization techniques to attempt to improve existing neural networks.
+
+**Work Completed:**
+- (Alexa) Recreated our best performing neural network and tested different optimizers, including RMSprop, Adagrad, Adamax, Nadam, and AdamW.
+- (Alexa) Began implementing various regularization techniques, including L1, L2, Dropout, and Max-Norm Regularization.
+- (Alexa) Revised code in long short term memory file and reran. No improvement in accuracy noted.
+
+**Files Created:**
+- work/13-neural-network-tuning.ipynb
+
+**Impact:** Still no improvement in accuracy noted. Best training accuracy remains at 7.0%.
+
+**Next Steps:** Complete and run models using regularization techniques. Fix code in neural network tuning file and rerun. Transfer to Azure instance if necessary. Identify best neural network overall. Begin work on final project presentation and report.
+
 ## 2026-04-19 - Beginning the Process of the Final Report (All)
 **Context:** Our work has begun to culminate into a final report summarizing our findings and bringing us closer to a conclusion.
 
