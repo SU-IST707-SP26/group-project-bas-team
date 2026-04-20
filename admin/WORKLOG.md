@@ -22,6 +22,8 @@
 - (Shahaan) Added 30K-row search subsample to avoid RAM fragmentation during hyperparameter search
 - (Shahaan) Added `USE_GPU` toggle to notebook 11 to switch between RTX 4060 and CPU
 
+**Impact:** M5.T4, M5.T5 — Full-data RF and XGBoost training in progress; multiple memory fixes applied; pushing to Azure NC6s_v3 
+
 **Next Steps:** Still working on getting notebooks 09 and 11 to complete successfully locally. Will push to Azure (NC6s_v3) for further testing.
 
 ## 2026-04-14 - Sequential Feature Engineering and Long Short Term Memory Model Creation (Alexa)
