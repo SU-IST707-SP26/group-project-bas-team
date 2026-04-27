@@ -1,5 +1,20 @@
 # WORKLOG.md
 
+## 2026-04-26 - Random Forest Azure Migration (Shahaan)
+**Context:** Moving Random Forest training to Azure ML to overcome local memory limitations. Full-data training (113K rows, 1,625 classes) OOMs on local machine and on the original F4s_v2 instance (8GB RAM) due to class probability storage at each tree node (13KB per node × 100 trees).
+
+**Work Completed:**
+- (Shahaan) Converted notebook 09 to a standalone Python script (`work/09-random-forest.py`) with headless plotting, timing logs, and fixed tuned model evaluation (was silently OOMing in notebook cell 22)
+- (Shahaan) Diagnosed F4s_v2 (8GB) as insufficient for full RF on this dataset; provisioned Standard_E4s_v3 (4 cores, 32GB RAM) compute instance `szkhan2` in Azure ML
+- (Shahaan) Cloned repo and started full-data RF training run on `szkhan2` — in progress
+
+**Files Created:**
+- work/09-random-forest.py
+
+**Impact:** M5.T4 — Full-data Random Forest training now running on Azure with 32GB RAM. Results pending.
+
+**Next Steps:** Collect RF results (accuracy, weighted F1, CV scores) from Azure run. Apply same Azure approach to XGBoost (M5.T5).
+
 ## 2026-04-20 - Final Neural Network Hyperparameter Tuning (Alexa)
 **Context:** Ran previously built code to tune neural network hyperparameters
 
