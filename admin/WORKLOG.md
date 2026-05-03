@@ -1,5 +1,17 @@
 # WORKLOG.md
 
+## 2026-05-02 - Built Model to Predict Demographics and Began Work on Final Report (Alexa)
+**Context:** Predicting demographics from purchase behavior and working on final report submission.
+
+**Work Completed:**
+- (Alexa) Built a multi-output neural network to predict demographics from purchase behavior. Model predicted all demographic variables better or the same as the most common value of each variable.
+- (Alexa) Built outline and began writing final report.
+- (Alexa) Updated workplan to better align with final goals and tasks.
+
+**Impact:** Demographic prediction model successfully built, allowing our purchase behavior predictions to be extrapolated beyond our dataset.
+
+**Next Steps:** Continue improving on purchase behavior prediction model and continue working on final report.
+
 ## 2026-04-26 - Random Forest Azure Migration (Shahaan)
 **Context:** Moving Random Forest training to Azure ML to overcome local memory limitations. Full-data training (113K rows, 1,625 classes) OOMs on local machine and on the original F4s_v2 instance (8GB RAM) due to class probability storage at each tree node (13KB per node × 100 trees).
 
