@@ -63,11 +63,17 @@ While modeling, we performed additional data cleaning and transformation steps a
 After exploring, cleaning, and preprocessing our data, we used numerous modeling techniques to understand patterns in the data and build a prediction model. Of our three possible target variables, we decided to attempt to predict only product categories. This is because ASIN/ISBN codes and product titles simply had too many unique values. We found that categories grouped products effectively enough that predicting categories would provide meaningful insight into possible recommendations for users. The goal of our recommendation model is to provide users with a few products that they may want to purchase based on their purchase history and demographics, not necessarily to predict their exact next purchase.
 
 Our initial modeling techniques included:
-1.	Dimensionality Reduction and K-Means Clustering: 
-2.	Association Rule Mining:
+1.	Dimensionality Reduction and KNN Classification: Our first attempt at modeling our data consisted of dimensionality reduction and subsequent K-nearest neighbor classification. We attempted a few different dimensionality reduction techniques, including Principal Component Analysis (PCA), Factor Analysis, and UMAP. Using PCA, we were able to capture 95 percent of variance in our data using 93 factors. Factor analysis was assessed using a KMO model, which indicated that it was unsuitable for our dataset. UMAP was attempted with 2 components. We then performed KNN classification on both the PCA and UMAP reduced datasets, as well as the original dataset. We found that the PCA reduced data was classified more accurately than the UMAP reduced data, but both reduction methods led to significantly worse classification results than the original data. Thus, we abandoned dimensionality reduction methods, and moved forward with our original dataset.
+2.	Association Rule Mining: Due to poor classification results in our KNN classification model, we decided to try association rule mining to get a better understanding of the data and items that are frequently purchased by the same customer based on survey response ID. It is important to note that this method required us to use only survey response ID and the categories, so it does not give us a comprehensive understanding of the impact of demographics on purchase behavior, or other factors such as purchase price, quantity, order date, or sequential features such as time between orders. This model served merely to give us a better understanding of relationships between product categories, and which categories are often purchased by the same customers.
 3.	Bayesian Rule Mining:
 4.	Random Forest:
-5.	Neural Networks (including basic MLPs, Wide and Deep neural networks, and LSTMs):
+5.	Neural Networks:
+    Next, we attempted various neural networks to predict categories. We began with a simple multilayer perceptron (MLP) with 2 hidden layers. We compiled the model using a loss function of sparse categorical cross entropy and an SGD optimizer, and using accuracy as our metric. We then attempted a wide and deep neural network, subsetting features so that the wide and deep components were trained on different features. This meant features that were likely linearly related to categories were used to train the wide component, and remaining features where interactions were likely present were used to train the deep component. At this point, we also examined the correlations between variables and removed some variables that were extremely highly correlated to other variables. We predicted that doing so would help mitigate memory constraints and simplify our models without sacrificing accuracy. Our wide and deep neural network performed significantly worse than our original MLP, so this was abandoned. We tested the MLP again after removing the highly correlated values to confirm that accuracy was not greatly impacted. 
+
+    Next, we attempted to build a Long-Short Term Memory (LSTM) network. At this point, we conducted sequential feature engineering to create new variables in our dataset, allowing the LSTM to identify sequential patterns. These features included days since last purchase, and the position in the customers order sequence. We also kept the survey response ID variable when training the LSTM to ensure that different customers were being treated as such. Although the LSTM did not improve on the accuracy of our previous model, we tested our original MLP on the data with the new features, which resulted in a slight improvement.
+
+    We attempted numerous hyperparameter combinations with our MLP, including number of layers, number of nodes per layer, activation functions, optimizers, and callbacks. We found that our best model was the MLP after removing highly correlated features and adding sequential and time-based features, with the original hyperparameters.
+
 
 While predicting what category of product a user might purchase next, we began to find that the number of unique categories in our data was still much too large, with over 1,600 unique categories. This not only limited our ability to accurately predict purchase categories, but also introduced memory issues and slowed down our models significantly. To mitigate this, we attempted to collapse our categories into a smaller number of more general categories. 
 
@@ -75,9 +81,33 @@ While predicting what category of product a user might purchase next, we began t
 
 [demographic predictions]
 
+[identify and state best model]
+
 **Evaluation Strategy**
 
-### Supporting files (Not done – essentially an index)
+[identify top few models (possibly one neural network and our random forest and xgboost models) and evaluate beyond just accuracy]
+
+### Supporting files (Not done – essentially an index - add brief descriptions of each)
+Our supporting files located in the work folder are as follows:
+1. 01-purchase-data-eda.ipynb
+2. 02-survey-data-eda.ipynb
+3. 03-data-merge-and-cleaning.ipynb
+4. 04-data-transformation.ipynb
+5. 05-dimensionality-reduction-and-visualization.ipynb
+6. 06-modeling.ipynb
+7. 07-association-rule-mining.ipynb
+8. 08-bayesian-rule-mining.ipynb
+9. 09-random-forest.ipynb
+    - 09-random-forest.py
+10. 10-neural-networks.ipynb
+11. 11-xgboost.ipynb
+    - 11-xgboost.py
+12. 12-lstm.ipynb
+13. 13-neural-network-tuning.ipynb
+14. 14-demographic-prediction.ipynb
+15. 15-category-consolidation.ipynb
+16. 16-final-evaluation.ipynb
+
 ### Results (Not Done)
 ### Discussion (Not Done)
 ### Limitations (Not Done)

@@ -1,11 +1,27 @@
 # WORKLOG.md
 
+## 2026-05-03 - Continue Working on Final Report (Alexa)
+**Context:** Continue working on final report, including Data and Methods and Supporting Files sections.
+
+**Work Completed:**
+- (Alexa) Cleaned up work files to remove excessive output and include clear titles in all files.
+- (Alexa) Continued writing final report, including Data and Methods and Supporting Files sections.
+- (Alexa) Attempted to consolidate categories variable, but kernel kept crashing.
+
+**Files Created:**
+- work/15-category-consolidation.ipynb
+- work/16-final-evaluation.ipynb
+
+**Impact:** Data and Methods and Supporting Files sections in final report nearly complete. Unable to complete category consolidation. Other team members will attempt.
+
+**Next Steps:** Consolidate categories and re-run best models to see if accuracy improves. Conduct final evaluation of models. Continue writing final report.
+
 ## 2026-05-02 - Built Model to Predict Demographics and Began Work on Final Report (Alexa)
 **Context:** Predicting demographics from purchase behavior and working on final report submission.
 
 **Work Completed:**
 - (Alexa) Built a multi-output neural network to predict demographics from purchase behavior. Model predicted all demographic variables better or the same as the most common value of each variable.
-- (Alexa) Built outline and began writing final report.
+- (Alexa) Built outline and began writing final report, including Literature Review and Data and Methods sections.
 - (Alexa) Updated workplan to better align with final goals and tasks.
 
 **Impact:** Demographic prediction model successfully built, allowing our purchase behavior predictions to be extrapolated beyond our dataset.
