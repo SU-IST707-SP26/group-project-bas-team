@@ -20,7 +20,7 @@ Limitations of current research and recommendations exist, particularly regardin
 
 ### Data and Methods
 
-##### Data (Not done – expand on where the data came from, how we know it is good data, and add visualizations)
+### Data (Not done – expand on where the data came from, how we know it is good data, and add visualizations)
 The dataset used contains 5 years’ worth of crowdsourced Amazon purchase histories and their user demographics, spanning from 2018 to 2022. 
 
 DOI: 10.7910/DVN/YGLYDY
@@ -32,23 +32,22 @@ All data was collected from consenting Amazon users and does not contain any uni
 Multiple CSV files were included:
 
 amazon-purchases.csv
-•	Details about the Amazon orders themselves, including the order date, state the shipping address is located in, purchase price, quantity of product purchased, product name, and category product can be found in among other values
-•	Includes a column named SurveyResponsesID (randomly generated at the time of collection) which links the user's survey response to their Amazon purchase
+- Details about the Amazon orders themselves, including the order date, state the shipping address is located in, purchase price, quantity of product purchased, product name, and category product can be found in among other values
+- Includes a column named SurveyResponsesID (randomly generated at the time of collection) which links the user's survey response to their Amazon purchase
 
 survey.csv
-•	Survey responses including only responses from users who willingly chose to participate and share their data
-•	Also includes the SurveyResponseID column as a link with amazon-purchases.csv
+- Survey responses including only responses from users who willingly chose to participate and share their data
+- Also includes the SurveyResponseID column as a link with amazon-purchases.csv
 
 fields.csv
-•	Names and descriptions of columns in survey.csv
-•	Fields/survey columns correspond to survey questions
-
+- Names and descriptions of columns in survey.csv
+- Fields/survey columns correspond to survey questions
 
 Limitations of crowdsourced data: Because participants self-selected into the survey, the dataset may not be perfectly representative of all Amazon users. We note this as a limitation but believe the dataset is sufficiently large and diverse for our modeling purposes.
 
-Due to the extremely large file sizes, we sampled 800 survey responses and will be analyzing only the Amazon purchases linked to these survey respondants. After cleaning and transforming the dataset, our data represents 157,026 Amazon purchases.
+Due to the extremely large file sizes, we sampled 800 survey responses and will be analyzing only the Amazon purchases linked to these survey respondents. After cleaning and transforming the dataset, our data represents 157,026 Amazon purchases.
 
-##### Methods (Not Done)
+### Methods (Not Done)
 
 **Preprocessing**
 We began by cleaning and transforming data to prepare it for modeling. This process included:
@@ -61,6 +60,20 @@ We began by cleaning and transforming data to prepare it for modeling. This proc
 While modeling, we performed additional data cleaning and transformation steps as needed for specific modeling attempts. These steps included additional temporal feature engineering and sequence construction, as well as grouping product categories. These steps will be described in relation to the modeling techniques they were implemented for in the following section.
 
 **Modeling Techniques**
+After exploring, cleaning, and preprocessing our data, we used numerous modeling techniques to understand patterns in the data and build a prediction model. Of our three possible target variables, we decided to attempt to predict only product categories. This is because ASIN/ISBN codes and product titles simply had too many unique values. We found that categories grouped products effectively enough that predicting categories would provide meaningful insight into possible recommendations for users. The goal of our recommendation model is to provide users with a few products that they may want to purchase based on their purchase history and demographics, not necessarily to predict their exact next purchase.
+
+Our initial modeling techniques included:
+1.	Dimensionality Reduction and K-Means Clustering: 
+2.	Association Rule Mining:
+3.	Bayesian Rule Mining:
+4.	Random Forest:
+5.	Neural Networks (including basic MLPs, Wide and Deep neural networks, and LSTMs):
+
+While predicting what category of product a user might purchase next, we began to find that the number of unique categories in our data was still much too large, with over 1,600 unique categories. This not only limited our ability to accurately predict purchase categories, but also introduced memory issues and slowed down our models significantly. To mitigate this, we attempted to collapse our categories into a smaller number of more general categories. 
+
+[Modeling attempts post category consolidation]
+
+[demographic predictions]
 
 **Evaluation Strategy**
 
