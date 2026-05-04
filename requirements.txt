@@ -17,5 +17,8 @@ mlxtend
 pgmpy
 xgboost
 
+# Text embeddings (category consolidation)
+sentence-transformers
+
 # Jupyter kernel support
 ipykernel
