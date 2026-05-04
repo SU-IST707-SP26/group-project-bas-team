@@ -1,4 +1,15 @@
 # WORKLOG.md
+## 2026-05-03 - Continue Working on Final Report (Ben)
+**Context:** Continue working on final report, including Data and Methods and Modeling Techniques sections.
+
+**Work Completed:**
+- (Ben) Continue working on final report, including Data and Methods and Modeling Techniques sections.
+- (Ben) Added to Data and Methods section where the data came from and why we believe it is good data.
+- (Ben) Added description of Bayesian Rule Mining process to the Modeling Techniques section.
+
+**Impact:** Modeling Techniques section in final report nearly complete. Data and Methods and Supporting Files sections nearly complete. 
+
+**Next Steps:** Continue writing final report.
 
 ## 2026-05-03 - Continue Working on Final Report (Alexa)
 **Context:** Continue working on final report, including Data and Methods, Literature Review, and Supporting Files sections.

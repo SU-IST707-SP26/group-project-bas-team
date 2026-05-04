@@ -30,7 +30,7 @@ Sellers: Third party sellers will benefit from our system as their products will
 
 ### Data and Methods
 
-### Data (Not done – expand on where the data came from, how we know it is good data, and add visualizations)
+### Data (Not done – Add visualizations)
 The dataset used contains 5 years’ worth of crowdsourced Amazon purchase histories and their user demographics, spanning from 2018 to 2022. 
 
 DOI: 10.7910/DVN/YGLYDY
@@ -57,6 +57,8 @@ Limitations of crowdsourced data: Because participants self-selected into the su
 
 Due to the extremely large file sizes, we sampled 800 survey responses and will be analyzing only the Amazon purchases linked to these survey respondents. After cleaning and transforming the dataset, our data represents 157,026 Amazon purchases.
 
+This data came from the Harvard Dataverse, which is Harvard University's research data repository. Harvard University is renowned for their research output, and they are consistently ranked the #1 research university in world each year, including this past year[^5]. This data also only consists of those who consented to participate in the survey, ensuring ethical collection that does not invade anyone's private data. With all of this in mind,, we believe this is legitimate and credible data that will be of great use for our analysis.
+
 ### Methods (Not Done)
 
 **Preprocessing**
@@ -75,7 +77,7 @@ After exploring, cleaning, and preprocessing our data, we used numerous modeling
 Our initial modeling techniques included:
 1.	Dimensionality Reduction and KNN Classification: Our first attempt at modeling our data consisted of dimensionality reduction and subsequent K-nearest neighbor classification. We attempted a few different dimensionality reduction techniques, including Principal Component Analysis (PCA), Factor Analysis, and UMAP. Using PCA, we were able to capture 95 percent of variance in our data using 93 factors. Factor analysis was assessed using a KMO model, which indicated that it was unsuitable for our dataset. UMAP was attempted with 2 components. We then performed KNN classification on both the PCA and UMAP reduced datasets, as well as the original dataset. We found that the PCA reduced data was classified more accurately than the UMAP reduced data, but both reduction methods led to significantly worse classification results than the original data. Thus, we abandoned dimensionality reduction methods, and moved forward with our original dataset.
 2.	Association Rule Mining: Due to poor classification results in our KNN classification model, we decided to try association rule mining to get a better understanding of the data and items that are frequently purchased by the same customer based on survey response ID. It is important to note that this method required us to use only survey response ID and the categories, so it does not give us a comprehensive understanding of the impact of demographics on purchase behavior, or other factors such as purchase price, quantity, order date, or sequential features such as time between orders. This model served merely to give us a better understanding of relationships between product categories, and which categories are often purchased by the same customers.
-3.	Bayesian Rule Mining:
+3.	Bayesian Rule Mining: Per our professor's suggestion, we performed Bayesian rule mining to evaluate and refine discovered rules about customer purchasing behavior across product categories. We read in an unencoded copy of the dataset to facilitate the process, computed Bayesian-adjusted confidence scores using Laplace smoothing, and calculated the Kemeny–Oppenheim confirmation measure to quantify the strength of evidence for each rule. We then  used pgmpy's Hill Climb search with BIC scoring to develop a Bayesian Network structure over frequent product categories, fit the network's parameters to display conditional probability tables (CPTs), visualized the directed dependency graph with NetworkX, surfaced the top rules filtered based on their Kemeny–Oppenheim measures, and added a category connectivity bar chart showing in-degree and out-degree per node. The resulting analysis and model identified category sets with high support and confidence grounded in both observed evidence and probabilistic priors, ultimately updating beliefs about which categories of items are commonly purchased together and verifying (or potentially disputing) earlier association rule mining findings to better inform cross-category customer recommendations.
 4.	Random Forest:
 5.	Neural Networks:
     Next, we attempted various neural networks to predict categories. We began with a simple multilayer perceptron (MLP) with 2 hidden layers. We compiled the model using a loss function of sparse categorical cross entropy and an SGD optimizer, and using accuracy as our metric. We then attempted a wide and deep neural network, subsetting features so that the wide and deep components were trained on different features. This meant features that were likely linearly related to categories were used to train the wide component, and remaining features where interactions were likely present were used to train the deep component. At this point, we also examined the correlations between variables and removed some variables that were extremely highly correlated to other variables. We predicted that doing so would help mitigate memory constraints and simplify our models without sacrificing accuracy. Our wide and deep neural network performed significantly worse than our original MLP, so this was abandoned. We tested the MLP again after removing the highly correlated values to confirm that accuracy was not greatly impacted. 
@@ -121,10 +123,11 @@ Our supporting files located in the work folder are as follows:
 ### Results (Not Done)
 ### Discussion (Not Done)
 ### Limitations (Not Done)
-### Future work (Not Done)
+### Future Work (Not Done)
 
 References
 [^1]: Raji, M. et al., "E-commerce and consumer behavior: A review of AI-powered personalization and market trends." 2024.  
 [^2]: Gupta, K. et al., "E-Commerce Customer Behavior Using Machine Learning." 2024.  
 [^3]: Al-Otaibi, Y., "Enhancing e-Commerce Strategies: A Deep Learning Framework for Customer Behavior Prediction." 2024.
 [^4] Aurélien Géron, "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, Third Edition", 2022.
+[^5] Voronoi. (2025, July 17). Harvard University is the top research university of 2025. https://www.voronoiapp.com/education/Harvard-University-is-the-Top-Research-University-of-2025--5816
