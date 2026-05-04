@@ -18,6 +18,16 @@ Limited research has been performed to understand the impact of demographics on 
 
 Limitations of current research and recommendations exist, particularly regarding the lack of demographic analysis in current systems. Demographics play a large role in user behavior, making it difficult for systems that lack such data to target niche groups. The result is a system that is too general to accurately predict user needs and distracts users with suggestions that do not fit their needs and desires. Incorporating demographic analysis into recommendations is vital to improving consumer engagement with e-commerce platforms and recommendations.
 
+Expanding on previous research, we intend to test a variety of both previously explored methods, such as neural networks, as well as new techniques such as ensemble methods, including XGBoost and Random Forest models. We acknowledge the novelty of existing approaches, and hope that the additional demographic features in our data will allow us to improve on existing methods and models.
+
+**Stakeholder Needs:**
+Amazon Executives: Personalized recommendations can help Amazon increase sales, engagement, and conversion rates by simplifying the consumer experience. Additionally, platform personalization can contribute to favorable opinions about the company.
+
+Consumers: The primary motivations for the use of e-commerce are convenience and wide product selections. However, the wide range of products available can make it difficult for users to quickly find the items they need. Creating the most accurate recommendations possible for individual users can alleviate decision fatigue and endless searching for the right products.
+
+Sellers: Third party sellers will benefit from our system as their products will be promoted to the customers who are most likely to purchase their products.
+
+
 ### Data and Methods
 
 ### Data (Not done – expand on where the data came from, how we know it is good data, and add visualizations)

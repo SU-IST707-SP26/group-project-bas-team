@@ -1,18 +1,18 @@
 # WORKLOG.md
 
 ## 2026-05-03 - Continue Working on Final Report (Alexa)
-**Context:** Continue working on final report, including Data and Methods and Supporting Files sections.
+**Context:** Continue working on final report, including Data and Methods, Literature Review, and Supporting Files sections.
 
 **Work Completed:**
 - (Alexa) Cleaned up work files to remove excessive output and include clear titles in all files.
-- (Alexa) Continued writing final report, including Data and Methods and Supporting Files sections.
+- (Alexa) Continued writing final report, including Data and Methods, Literature Review, and Supporting Files sections.
 - (Alexa) Attempted to consolidate categories variable, but kernel kept crashing.
 
 **Files Created:**
 - work/15-category-consolidation.ipynb
 - work/16-final-evaluation.ipynb
 
-**Impact:** Data and Methods and Supporting Files sections in final report nearly complete. Unable to complete category consolidation. Other team members will attempt.
+**Impact:** Literature Review section in final report complete. Data and Methods and Supporting Files sections nearly complete. Unable to complete category consolidation. Other team members will attempt.
 
 **Next Steps:** Consolidate categories and re-run best models to see if accuracy improves. Conduct final evaluation of models. Continue writing final report.
 
