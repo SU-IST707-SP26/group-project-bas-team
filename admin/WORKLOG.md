@@ -1,20 +1,17 @@
 # WORKLOG.md
-## 2026-05-04 - Reran Neural Networks and Continued Working on Final Report (All)
-**Context:** Reran neural networks with consolidated categories. 
+
+## 2026-05-04 - Reran Neural Networks and Continued Working on Final Report (Alexa)
+**Context:** Reran neural networks with consolidated categories. Continued working on final report.
 
 **Work Completed:**
 - (Alexa) Reran best neural network on new data with consolidated categories. Accuracy improved greatly.
 - (Alexa) Further evaluated neural network using F1-score and confusion matrix.
 - (Alexa) Resampled training data to improve neural networks. Improvement in training accuracy noted, but significant decrease in both accuracy and F1-score after resampling.
-- (Ben) Continued writing final report, including reporting the results of our analysis and discussing its limitations.
 
 **Files Created:**
 - work/16-neural-networks-with-parent-categories.ipynb
-- Renamed: work/17-final-evaluation.ipynb
 
-**Impact:** 
-- Neural network accuracy improved greatly on new data (training accuracy = 35%, test accuracy = 27.2%)
-- Modeling Techniques section in final report complete. Concluding sections are nearly complete.
+**Impact:** Neural network accuracy improved greatly on new data (training accuracy = 30.6%, test accuracy = 22.7%).
 
 **Next Steps:** Continue writing final report.
 

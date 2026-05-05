@@ -59,7 +59,7 @@ Due to the extremely large file sizes, we sampled 800 survey responses and will 
 
 This data came from the Harvard Dataverse, which is Harvard University's research data repository. Harvard University is renowned for their research output, and they are consistently ranked the #1 research university in world each year, including this past year[^5]. This data also only consists of those who consented to participate in the survey, ensuring ethical collection that does not invade anyone's private data. With all of this in mind,, we believe this is legitimate and credible data that will be of great use for our analysis.
 
-### Methods (Not Done)
+### Methods
 
 **Preprocessing**
 We began by cleaning and transforming data to prepare it for modeling. This process included:
@@ -87,39 +87,35 @@ Our initial modeling techniques included:
     We attempted numerous hyperparameter combinations with our MLP, including number of layers, number of nodes per layer, activation functions, optimizers, and callbacks. We found that our best model was the MLP after removing highly correlated features and adding sequential and time-based features, with the original hyperparameters.
 
 
-While predicting what category of product a user might purchase next, we began to find that the number of unique categories in our data was still much too large, with over 1,600 unique categories. This not only limited our ability to accurately predict purchase categories, but also introduced memory issues and slowed down our models significantly. To mitigate this, we attempted to collapse our categories into a smaller number of more general categories. 
+While predicting what category of product a user might purchase next, we began to find that the number of unique categories in our data was still much too large, with over 1,600 unique categories. This not only limited our ability to accurately predict purchase categories, but also introduced memory issues and slowed down our models significantly. To mitigate this, we attempted to collapse our categories into a smaller number of more general categories. We also created an additional feature to represent purchase price tier.
 
-[Modeling attempts post category consolidation]
+Once parent categories were identified, we ran our best neural network on the new category data. We also ran a random forest and an XGBoost model. Using accuracy and F1-score as our metrics, we identified XGBoost using the parent categories as our strongest model.
 
-[demographic predictions]
-
-[identify and state best model]
+Typical Amazon customers do not disclose their demographic information. This means that in order to extrapolate our model beyond our dataset, we must be able to reliably predict customer demographics based on the data they do provide. That is, we must be able to predict demographics based on a customer’s purchase history. To do this, we built a multi-output neural network to predict each demographic feature in our dataset. We then confirmed that predictions for all demographic variables were more accurate than simply predicting the most common value of each. This network would allow us to use our model on typical Amazon users, not just users who voluntarily provide their demographic information.
 
 **Evaluation Strategy**
+When evaluating our models, we examined both accuracy and F1-scores. Because our data is highly imbalanced, F1-score provides a better indication of performance than accuracy alone. Although some models exhibited promising accuracies, not all of these models resulted in as high of F1-scores. Our strongest model, XGBoost, exhibited a similar accuracy and F1-score on both training and testing data, indicating that it performed well even on unbalanced data.
 
-[identify top few models (possibly one neural network and our random forest and xgboost models) and evaluate beyond just accuracy]
-
-### Supporting files (Not done – essentially an index - add brief descriptions of each)
+### Supporting files
 Our supporting files located in the work folder are as follows:
-1. *01-purchase-data-eda.ipynb*: 
-2. *02-survey-data-eda.ipynb*
-3. *03-data-merge-and-cleaning.ipynb*
-4. *04-data-transformation.ipynb*
-5. *05-dimensionality-reduction-and-visualization.ipynb*
-6. *06-modeling.ipynb*
-7. *07-association-rule-mining.ipynb*
-8. *08-bayesian-rule-mining.ipynb*
-9. *09-random-forest.ipynb*
-    - *09-random-forest.py*
-10. *10-neural-networks.ipynb*
-11. *11-xgboost.ipynb*
-    - *11-xgboost.py*
-12. *12-lstm.ipynb*
-13. *13-neural-network-tuning.ipynb*
-14. *14-demographic-prediction.ipynb*
-15. *15-category-consolidation.ipynb*
-16. *16-neural-networks-with-parent-categories.ipynb*
-17. *17-final-evaluation.ipynb*
+1. *01-purchase-data-eda.ipynb*: Exploratory analysis of the Amazon purchase data
+2. *02-survey-data-eda.ipynb*: Exploratory analysis of the Survey data.
+3. *03-data-merge-and-cleaning.ipynb*: Merging of the Amazon purchases and survey data and initial cleaning (handling missing values, renaming variables, etc.).
+4. *04-data-transformation.ipynb*: Transformation of merged data, including encoding and scaling.
+5. *05-dimensionality-reduction-and-visualization.ipynb*: Using PCA, Factor Analysis, and UMAP to reduce dimensionality and visualizing reduced data.
+6. *06-modeling.ipynb*: Initial modeling attempts using a K-Neighbors Classifier and comparing accuracy using original data and reduced data.
+7. *07-association-rule-mining.ipynb*: Using Association Rule Mining to identify items frequently purchased by the same customers.
+8. *08-bayesian-rule-mining.ipynb*: Using Bayesian Rule Mining to identify items frequently purchased by the same users and visualizing Bayesian networks.
+9. *09-random-forest.ipynb*: Building a random forest model and analyzing feature importance.
+    - *09-random-forest.py*: Code to build a random forest model from Azure instance.
+10. *10-neural-networks.ipynb*: Building an MLP and Wide & Deep neural network to classify category labels.
+11. *11-xgboost.ipynb*: Building an XGBoost classifier to classify category labels.
+    - *11-xgboost.py*: Code to build an XGBoost classifier from Azure instance.
+12. *12-lstm.ipynb*: Expanding on existing neural networks to create an LSTM network using sequential features
+13. *13-neural-network-tuning.ipynb*: Additional hyperparameter tuning of neural networks.
+14. *14-demographic-prediction.ipynb*: Building a prediction model to identify demographic features from purchase behavior.
+15. *15-category-consolidation.ipynb*: Consolidating category labels into broader parent categories for improved classification.
+16. *16-neural-networks-with-parent-categories.ipynb*: Re-running neural network on broader category labels.
 
 ### Results (Not Done)
 Our modeling pipeline progressed through several stages, each informing the direction of subsequent attempts.
@@ -143,7 +139,7 @@ A persistent challenge across all models was the high number of unique product c
 ### Discussion (Not Done)
 
 ### Limitations (Not Done)
-Several limitations should be considered when interpreting our findings. Firstly, because participants voluntarily chose to share their Amazon purchase histories, the sample may not be fully representative of the broader Amazon customer base; certain demographics or purchasing behaviors may be over- or under-represented relative to the general population of Amazon users. Another limitation arose because we subsetted the data to 800 randomly selected survey respondents, yielding 157,026 purchases (the full dataset has almost 1,000,000 purchases across around 5,000 participants). While this sample is still substantial, reducing the dataset may have excluded patterns or demographic groups present in the full data. The granularity of our product categories also posed a significant challenge as well. With over 1,600 unique categories, models struggled with both predictive accuracy and computational efficiency. Although we attempted to mitigate this through category consolidation, the mapping of fine-grained categories to broader parent categories inevitably involves some loss of specificity and may introduce ambiguity in how products are grouped. Another limitation comes with the fact that the dataset consists solely of pre-2021 data, which means the set is outdated and may not reflect current shopping trends and patterns. It also may not reflect any significant events (i.e. America's 250th anniversary) that may influence these shopping patterns. Another limitation was the presence of missing data; handling it required several imputation decisions, such as assuming that absent life-change responses indicated no life changes. These assumptions, while reasonable, may not hold for all respondents and could introduce noise into the dataset. Certain modeling approaches were also limited in the features they could incorporate. Association rule mining, for example, relied solely on survey response ID and product categories, meaning it could not account for the influence of demographics, pricing, or temporal patterns on co-purchase behavior. Finally, our models predict product categories rather than specific products, which doesn't give too much insight for individual product suggestions. This trade-, however, was necessary given the impracticality of predicting from tens of thousands of unique IDs or product titles.
+Several limitations should be considered when interpreting our findings. Firstly, because participants voluntarily chose to share their Amazon purchase histories, the sample may not be fully representative of the broader Amazon customer base; certain demographics or purchasing behaviors may be over- or under-represented relative to the general population of Amazon users. Another limitation arose because we subsetted the data to 800 randomly selected survey respondents, yielding 157,026 purchases (the full dataset has almost 1,000,000 purchases across around 5,000 participants). While this sample is still substantial, reducing the dataset may have excluded patterns or demographic groups present in the full data. The granularity of our product categories also posed a significant challenge as well. With over 1,600 unique categories, models struggled with both predictive accuracy and computational efficiency. Although we attempted to mitigate this through category consolidation, the mapping of fine-grained categories to broader parent categories inevitably involves some loss of specificity and may introduce ambiguity in how products are grouped. Another limitation comes with the fact that the dataset consists solely of pre-2021 data, which means the set is outdated and may not reflect current shopping trends and patterns. It also may not reflect any significant events (i.e. America's 250th anniversary) that may influence these shopping patterns. Another limitation was the presence of missing data; handling it required several imputation decisions, such as assuming that absent life-change responses indicated no life changes. These assumptions, while reasonable, may not hold for all respondents and could introduce noise into the dataset. Certain modeling approaches were also limited in the features they could incorporate. Association rule mining, for example, relied solely on survey response ID and product categories, meaning it could not account for the influence of demographics, pricing, or temporal patterns on co-purchase behavior. Finally, our models predict product categories rather than specific products, which doesn't give too much insight for individual product suggestions. This trade-off, however, was necessary given the impracticality of predicting from tens of thousands of unique IDs or product titles.
 
 ### Future Work (Not Done)
 
