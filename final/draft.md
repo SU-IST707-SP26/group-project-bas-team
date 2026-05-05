@@ -136,6 +136,12 @@ Our neural network consisted of a multilayer perceptron (MLP) with two hidden la
 **Category Consolidation**
 A persistent challenge across all models was the high number of unique product categories(each exceeding 1,600). This granularity not only limited predictive accuracy but also introduced memory constraints and substantially slowed model training. To address this, categories were consolidated into a smaller set of more general parent categories, and modeling was repeated on the simplified target variable. Overall, the results demonstrated that simpler architectures like the MLP, when paired with thoughtful feature engineering and category consolidation, were on par with if not better than the more complex approaches. Dimensionality reduction and more elaborate neural network architectures did not improve model performance on this dataset.
 
+**Neural Networks Using Parent Categories**
+
+**Random Forest**
+
+**XGBoost**
+
 ### Discussion (Not Done)
 
 ### Limitations (Not Done)

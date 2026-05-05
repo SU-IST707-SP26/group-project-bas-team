@@ -11,7 +11,7 @@
 **Files Created:**
 - work/16-neural-networks-with-parent-categories.ipynb
 
-**Impact:** Neural network accuracy improved greatly on new data (training accuracy = 30.6%, test accuracy = 22.7%).
+**Impact:** Neural network accuracy improved greatly on new data (training accuracy = 30.1%, test accuracy = 23.2%).
 
 **Next Steps:** Continue writing final report.
 
