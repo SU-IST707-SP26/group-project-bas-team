@@ -1,5 +1,25 @@
 # WORKLOG.md
 
+## 2026-05-05 - Final Report Completion and Submission (Shahaan)
+**Context:** Fixed notebook path issues blocking local re-runs, verified all model metrics, and wrote all missing report sections.
+
+**Work Completed:**
+- (Shahaan) Fixed hardcoded GitHub Codespaces path in notebook 10 (cell 2): `/workspaces/.../cleaned_data.csv` replaced with relative path `../data/cleaned_data.csv`
+- (Shahaan) Fixed notebook 16: removed shadowing `from importlib.resources import path` import (cell 2) and corrected cell 4 to read `data_unencoded.csv` instead of `cleaned_data_with_parent.csv` (was causing KeyError on Survey ResponseID and Order Date columns)
+- (Shahaan) Re-ran and verified metrics across notebooks 09, 11, 15-1, 15-2, and 16; confirmed actual RF accuracy is 7.28%
+- (Shahaan) Wrote all missing Results sections: Neural Networks (7.04%/5.77%), Neural Networks Using Parent Categories (23.2%, SMOTE class), Random Forest (7.28%, top feature Purchase Price Per Unit 0.2549), XGBoost full progression (7.78% baseline through 36.1% best model)
+- (Shahaan) Wrote Discussion and Future Work sections; updated Supporting Files entries for notebooks 15-1 and 15-2
+- (Shahaan) Fixed formatting issues throughout: heading levels, footnote syntax, tense, em dashes, informal phrasing
+- (Shahaan) Added 8 figures: 4 EDA visualizations (nb 01-02), Bayesian network, best model confusion matrix, feature importance bar chart (nb 15-2), prediction accuracy by category x price tier (nb 15-1), and cross-category investment map (nb 15-1)
+
+**Files Modified:**
+- work/10-neural-networks.ipynb (path fix)
+- work/16-neural-networks-with-parent-categories.ipynb (two cell fixes)
+
+**Impact:** Final report complete. All results sections written with verified metrics and 8 embedded figures.
+
+**Next Steps:** Git commit and submit.
+
 ## 2026-05-04 - Reran Neural Networks and Continued Working on Final Report (Alexa)
 **Context:** Reran neural networks with consolidated categories. Continued working on final report.
 
@@ -14,6 +34,8 @@
 **Impact:** Neural network accuracy improved greatly on new data (training accuracy = 30.1%, test accuracy = 23.2%).
 
 **Next Steps:** Continue writing final report.
+
+
 
 ## 2026-05-03 - Continue Working on Final Report (Ben)
 **Context:** Continue working on final report, including Data and Methods and Modeling Techniques sections.

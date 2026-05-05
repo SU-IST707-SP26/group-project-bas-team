@@ -34,7 +34,7 @@
 
 ### Milestone 6: Evaluation
 - [✅] M6.T1 — Calculate precision, recall, and F1 scores
-- [⏳] M6.T4 — Final documentation (Team)
+- [✅] M6.T4 — Final documentation (Team)
 
 ---
 
@@ -52,3 +52,6 @@
 
 ### 2026-05-05
 - (Alexa) ❌ M6.T2 — Abandoned "Analyze model performance by demographic segment" - Unable to complete in time to submit project.
+
+### 2026-05-04
+- (Shahaan) ✅ M6.T4 — All Results, Discussion, and Future Work sections written with verified metrics and 8 graphs.
