@@ -9,7 +9,7 @@
 3.	Name: Ben Euto - POC <br>
     GitHub ID: bene01-git
 
-### Introduction (Not Done)
+### Introduction
 Our project aims to examine customer behavior when it comes to e-commerce websites, mainly Amazon. Amazon is the world's biggest online retailer, with millions of active users worldwide and billions of monthly visits. Understanding and being able to predict purchase behavior introduces an opportunity for targeted recommendations that users are likely to actually purchase, benefitting both customers, Amazon executives, and sellers alike. 
 
 **What are we trying to do?**<br>
