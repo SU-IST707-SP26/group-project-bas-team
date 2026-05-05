@@ -10,6 +10,20 @@
     GitHub ID: bene01-git
 
 ### Introduction (Not Done)
+Our project aims to examine customer behavior when it comes to e-commerce websites, mainly Amazon. Amazon is the world's biggest online retailer, with millions of active users worldwide and billions of monthly visits. Understanding and being able to predict purchase behavior introduces an opportunity for targeted recommendations that users are likely to actually purchase, benefitting both customers, Amazon executives, and sellers alike. 
+
+**What are we trying to do?**<br>
+Our goal is to build a system that uses current Amazon customer activity to predict future Amazon customer activity. For example, if a user purchases from one product category, would we expect them to repurchase from that same category? If not, can we predict which category they will purchase from next? We plan to do this by examining a combination of user demographics and purchase characteristics such as price, quantity, shipping state, and more.
+
+**Primary Stakeholder Needs**<br>
+This project aims to address the needs of the following stakeholders:
+1.	Amazon Executives: Amazon needs a way to create reliable targeted recommendations that will actually promote purchases on the platform. Additionally, poor recommendations can lead to unfavorable perceptions of the company.
+2.	Customers: The wide selection of products offered on Amazon can introduce decision fatigue and lead to endless searching for the right products.
+3.	Sellers: With so many companies selling their products on Amazon, it can be difficult for sellers to target the right customers who are likely to purchase their products.
+
+**Our Solution**<br>
+Our final solution implements an XGBoost model to predict the category of a purchase based on both characteristics of that purchase and the customer’s demographics. Using previous purchases to understand what product characteristics customers gravitate towards, our model can be used to predict what other product categories a customer might purchase. This information can then be used to create personalized recommendations for users, with the goal of alleviating decision fatigue and providing a better shopping experience for customers, as well as boosting sales on the Amazon platform. Additionally, improved recommendations can help sellers reach the customers who are likely to actually purchase their products.
+
 
 ### Literature Review
 Previous approaches in analyzing consumer behavior in the e-commerce industry are rooted in machine learning techniques used to understand and create personalized recommendations based on user behavior, preferences and historical interactions[^1]. These algorithms use data from entire customer-bases to determine and recommend items frequently bought by users with similar buying patterns. Such algorithms utilize machine learning techniques including neural networks, classification, Naïve Bayes, decision trees, logistic regression, and clustering to analyze buying patterns and create accurate recommendations[^1] [^2]. Beyond analyzing buying patterns, previous research also includes sentiment analysis based on customer reviews of products, uncovering opinions of consumers and providing insight into future purchase or repurchase patterns[^2].
@@ -20,7 +34,7 @@ Limitations of current research and recommendations exist, particularly regardin
 
 Expanding on previous research, we intend to test a variety of both previously explored methods, such as neural networks, as well as new techniques such as ensemble methods, including XGBoost and Random Forest models. We acknowledge the novelty of existing approaches, and hope that the additional demographic features in our data will allow us to improve on existing methods and models.
 
-**Stakeholder Needs:**
+**Stakeholder Needs:**<br>
 *Amazon Executives*: Personalized recommendations can help Amazon increase sales, engagement, and conversion rates by simplifying the consumer experience. Additionally, platform personalization can contribute to favorable opinions about the company.
 
 *Consumers*: The primary motivations for the use of e-commerce are convenience and wide product selections. However, the wide range of products available can make it difficult for users to quickly find the items they need. Creating the most accurate recommendations possible for individual users can alleviate decision fatigue and endless searching for the right products.
@@ -57,11 +71,15 @@ Limitations of crowdsourced data: Because participants self-selected into the su
 
 Due to the extremely large file sizes, we sampled 800 survey responses and will be analyzing only the Amazon purchases linked to these survey respondents. After cleaning and transforming the dataset, our data represents 157,026 Amazon purchases.
 
+The chart below displays a Bayesian network of category dependencies. This gives us an understanding of how some of the categories in our dataset are related to one another. That is, which items were frequently purchased by the same customers. For example, customers who purchased shirts often also purchased pants, socks, or even personal care items.
+
+![alt text](image-1.png)
+
 This data came from the Harvard Dataverse, which is Harvard University's research data repository. Harvard University is renowned for their research output, and they are consistently ranked the #1 research university in world each year, including this past year[^5]. This data also only consists of those who consented to participate in the survey, ensuring ethical collection that does not invade anyone's private data. With all of this in mind,, we believe this is legitimate and credible data that will be of great use for our analysis.
 
 ### Methods
 
-**Preprocessing**
+**Preprocessing**<br>
 We began by cleaning and transforming data to prepare it for modeling. This process included:
 1.	*Data Integration and Subsetting*: We joined amazon-purchases.csv with survey.csv using the SurveyResponseID field to create a singular dataset combining purchase behavior with demographic attributes. We then subsetted the data to only include purchases for a random selection of 800 survey participants to mitigate future memory and storage constraints.
 2.	*Temporal Feature Engineering*: Order dates were parsed into day, month, and year variables.
@@ -71,7 +89,7 @@ We began by cleaning and transforming data to prepare it for modeling. This proc
 
 While modeling, we performed additional data cleaning and transformation steps as needed for specific modeling attempts. These steps included additional temporal feature engineering and sequence construction, as well as grouping product categories. These steps will be described in relation to the modeling techniques they were implemented for in the following section.
 
-**Modeling Techniques**
+**Modeling Techniques**<br>
 After exploring, cleaning, and preprocessing our data, we used numerous modeling techniques to understand patterns in the data and build a prediction model. Of our three possible target variables, we decided to attempt to predict only product categories. This is because ASIN/ISBN codes and product titles simply had too many unique values. We found that categories grouped products effectively enough that predicting categories would provide meaningful insight into possible recommendations for users. The goal of our recommendation model is to provide users with a few products that they may want to purchase based on their purchase history and demographics, not necessarily to predict their exact next purchase.
 
 Our initial modeling techniques included:
@@ -87,15 +105,13 @@ Our initial modeling techniques included:
     We attempted numerous hyperparameter combinations with our MLP, including number of layers, number of nodes per layer, activation functions, optimizers, and callbacks. We found that our best model was the MLP after removing highly correlated features and adding sequential and time-based features, with the original hyperparameters.
 6.  *XGBoost*
 
-
-
 While predicting what category of product a user might purchase next, we began to find that the number of unique categories in our data was still much too large, with over 1,600 unique categories. This not only limited our ability to accurately predict purchase categories, but also introduced memory issues and slowed down our models significantly. To mitigate this, we attempted to collapse our categories into a smaller number of more general categories. We also created an additional feature to represent purchase price tier.
 
 Once parent categories were identified, we ran our best neural network on the new category data. We also ran a random forest and an XGBoost model. Using accuracy and F1-score as our metrics, we identified XGBoost using the parent categories as our strongest model.
 
 Typical Amazon customers do not disclose their demographic information. This means that in order to extrapolate our model beyond our dataset, we must be able to reliably predict customer demographics based on the data they do provide. That is, we must be able to predict demographics based on a customer’s purchase history. To do this, we built a multi-output neural network to predict each demographic feature in our dataset. We then confirmed that predictions for all demographic variables were more accurate than simply predicting the most common value of each. This network would allow us to use our model on typical Amazon users, not just users who voluntarily provide their demographic information.
 
-**Evaluation Strategy**
+**Evaluation Strategy**<br>
 When evaluating our models, we examined both accuracy and F1-scores. Because our data is highly imbalanced, F1-score provides a better indication of performance than accuracy alone. Although some models exhibited promising accuracies, not all of these models resulted in as high of F1-scores. Our strongest model, XGBoost, exhibited a similar accuracy and F1-score on both training and testing data, indicating that it performed well even on unbalanced data.
 
 ### Supporting files
@@ -122,27 +138,27 @@ Our supporting files located in the work folder are as follows:
 ### Results (Not Done)
 Our modeling pipeline progressed through several stages, each informing the direction of subsequent attempts.
 
-**Dimensionality Reduction and KNN Classification**
+**Dimensionality Reduction and KNN Classification**<br>
 We ran PCA using 93 components, while UMAP was attempted with 2 components. KNN classification was then applied to the PCA-reduced, UMAP-reduced, and original datasets. The PCA-reduced data yielded higher classification accuracy than the UMAP-reduced data. However, both dimensionality reduction approaches produced significantly worse results than the original, unreduced dataset. Factor analysis was also assessed using a Kaiser-Meyer-Olkin (KMO) test, which indicated that it was unsuitable for our data. With all of this in mind, dimensionality reduction was abandoned in favor of modeling on the original feature set.
 
-**Association and Bayesian Rule Mining**
+**Association and Bayesian Rule Mining**<br>
 Association rule mining was used to identify product categories frequently purchased by the same customer. While this method provided useful insight into co-purchase patterns, it was limited by the fact that it only leveraged survey response ID and product categories, excluding demographics, pricing, quantity, order dates, and sequential features. 
 
 Bayesian rule mining extended these findings by computing Bayesian-adjusted confidence scores with Laplace smoothing and calculating Kemeny–Oppenheim confirmation measures. A Bayesian Network was constructed over frequent product categories using Hill Climb search with BIC scoring, producing conditional probability tables and a directed dependency graph. 
 
 The resulting analysis identified category sets with high support and confidence, verifying and in some cases refining earlier association rule mining findings to better inform cross-category recommendations.
 
-**Neural Networks**
+**Neural Networks**<br>
 Our neural network consisted of a multilayer perceptron (MLP) with two hidden layers including sparse categorical cross-entropy loss and an SGD optimizer. Wide and deep neural networks were tested, with features split so that features with linear relationships trained the wide component and interaction-based features trained the deep component. This architecture performed significantly worse than the original MLP and was abandoned. An LSTM network was also tested after engineering sequential features, including days since last purchase and order sequence position. While the LSTM itself did not outperform the MLP, incorporating the newly engineered sequential and time-based features into the MLP yielded a slightly improved accuracy. After extensive hyperparameter tuning across number of layers, nodes per layer, activation functions, optimizers, and callbacks, our best performing neural network remained the MLP trained on the dataset with highly correlated features removed and sequential and time-based features added using its original hyperparameters.
 
-**Category Consolidation**
+**Category Consolidation**<br>
 A persistent challenge across all models was the high number of unique product categories(each exceeding 1,600). This granularity not only limited predictive accuracy but also introduced memory constraints and substantially slowed model training. To address this, categories were consolidated into a smaller set of more general parent categories, and modeling was repeated on the simplified target variable. Overall, the results demonstrated that simpler architectures like the MLP, when paired with thoughtful feature engineering and category consolidation, were on par with if not better than the more complex approaches. Dimensionality reduction and more elaborate neural network architectures did not improve model performance on this dataset.
 
-**Neural Networks Using Parent Categories**
+**Neural Networks Using Parent Categories**<br>
 
-**Random Forest**
+**Random Forest**<br>
 
-**XGBoost**
+**XGBoost**<br>
 
 ### Discussion (Not Done)
 
