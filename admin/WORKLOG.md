@@ -1,4 +1,21 @@
 # WORKLOG.md
+
+## 2026-05-04 - Reran Neural Networks and Continued Working on Final Report
+**Context:** Reran neural networks with consolidated categories. 
+
+**Work Completed:**
+- (Alexa) Reran best neural network on new data with consolidated categories. Accuracy improved greatly.
+- (Alexa) Further evaluated neural network using F1-score and confusion matrix.
+- (Alexa) Resampled training data to improve neural networks. Improvement in training accuracy noted, but significant decrease in both accuracy and F1-score after resampling.
+
+**Files Created:**
+- work/16-neural-networks-with-parent-categories.ipynb
+- Renamed: work/17-final-evaluation.ipynb
+
+**Impact:** Neural network accuracy improved greatly on new data (training accuracy = 35%, test accuracy = 27.2%)
+
+**Next Steps:** Continue writing final report.
+
 ## 2026-05-03 - Continue Working on Final Report (Ben)
 **Context:** Continue working on final report, including Data and Methods and Modeling Techniques sections.
 
@@ -190,7 +207,7 @@
 
 **Impact:** Further association rule mining completed and results visualized to understand which itemsets have the greatest confidence, support, and lift
 
-**Next Steps:** 
+**Next Steps:** Begin building neural networks.
 
 ## 2026-03-29 - Began Bayesian rule mining (Shahaan)
 **Context:** Attempting to add more data into dataset
