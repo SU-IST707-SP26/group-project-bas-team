@@ -6,7 +6,8 @@
       "Bash(python -c ':*)",
       "Bash(python)",
       "Bash(python -c ' *)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(python -c \"import pandas as pd; df = pd.read_csv\\('../data/cleaned_data_with_parent.csv', nrows=1\\); print\\(list\\(df.columns\\)\\)\")"
     ]
   }
 }

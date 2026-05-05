@@ -170,16 +170,22 @@ plt.savefig('rf_confusion_matrix.png', dpi=150)
 plt.close()
 print('Saved: rf_confusion_matrix.png')
 
-# ── 6. Cross-validation ────────────────────────────────────────────────────────
-print('\n--- 5-Fold Cross-Validation ---')
-train_df = pd.DataFrame(X_train_scaled, columns=feature_names)
-train_df['Category'] = y_train.values
-cat_counts = train_df['Category'].value_counts()
-valid_cats = cat_counts[cat_counts >= 5].index
-train_df_filtered = train_df[train_df['Category'].isin(valid_cats)]
-X_cv = train_df_filtered.drop('Category', axis=1).values
-y_cv = train_df_filtered['Category'].values
-print(f'CV data: {len(X_cv):,} samples, {len(valid_cats)} categories')
+# ── 6. Cross-validation (30K subsample — full 113K OOMs during sequential fold GC) ───
+print('\n--- 5-Fold Cross-Validation (30K subsample) ---')
+CV_SIZE = 30_000
+np.random.seed(0)
+cv_idx = np.random.choice(len(X_train_scaled), CV_SIZE, replace=False)
+X_cv_sub = X_train_scaled[cv_idx]
+y_cv_sub = y_train.iloc[cv_idx]
+
+# Filter to categories with >= 5 samples so StratifiedKFold can split
+cv_series = pd.Series(y_cv_sub.values)
+valid_cats = cv_series.value_counts()
+valid_cats = valid_cats[valid_cats >= 5].index
+mask_cv = cv_series.isin(valid_cats).values
+X_cv = X_cv_sub[mask_cv]
+y_cv = y_cv_sub.values[mask_cv]
+print(f'CV subsample: {len(X_cv):,} samples, {len(valid_cats)} categories')
 
 cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 rf_cv = RandomForestClassifier(**best_params, n_jobs=-1, random_state=42)
@@ -205,7 +211,7 @@ print(f'  --- Baseline (100 trees, depth=30) ---')
 print(f'  Accuracy:             {baseline_acc:.4f}')
 print(f'  F1 (weighted):        {baseline_f1_weighted:.4f}')
 print()
-print(f'  --- Tuned RF ---')
+print(f'  --- Tuned RF (full 113K train) ---')
 print(f'  Best params:          {best_params}')
 print(f'  Accuracy:             {tuned_acc:.4f}')
 print(f'  Precision (macro):    {tuned_prec_macro:.4f}')
@@ -213,7 +219,7 @@ print(f'  Recall (macro):       {tuned_rec_macro:.4f}')
 print(f'  F1 (macro):           {tuned_f1_macro:.4f}')
 print(f'  F1 (weighted):        {tuned_f1_weighted:.4f}')
 print()
-print(f'  --- Cross-Validation (5-fold) ---')
+print(f'  --- Cross-Validation (5-fold, 30K subsample) ---')
 print(f'  F1 (weighted):        {cv_scores.mean():.4f} +/- {cv_scores.std() * 2:.4f}')
 print(f'  Accuracy:             {cv_acc_scores.mean():.4f} +/- {cv_acc_scores.std() * 2:.4f}')
 print('=' * 55)
